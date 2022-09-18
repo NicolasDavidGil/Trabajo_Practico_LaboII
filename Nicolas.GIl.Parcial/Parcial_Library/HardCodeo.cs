@@ -37,6 +37,7 @@ namespace Parcial_Library
 
         public static void InicializarDestinos()
         {
+            Aerolinea.misDestinos.Add("Buenos Aires");
             Aerolinea.misDestinos.Add("Santa Rosa");
             Aerolinea.misDestinos.Add("Bariloche");
             Aerolinea.misDestinos.Add("Corrientes");

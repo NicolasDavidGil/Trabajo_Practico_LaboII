@@ -78,15 +78,7 @@ namespace Parcial_Laboratorio
                 cmb_clasePasajero.Items.Add(Aerolinea.clasesVuelo[i]);
             }            
         }
-
-        private void cmb_clasePasajero_ValueMemberChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void cmb_pesoTotal_ValueMemberChanged(object sender, EventArgs e)
-        {
-        }
-
+    
         private void cmb_pesoTotal_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cmb_clasePasajero.Text == "Turista" && nud_cantidadMaletas.Value == 1)
@@ -111,6 +103,25 @@ namespace Parcial_Laboratorio
                 for (int i = 1; i <= 42; i++)
                 {
                     cmb_pesoTotal.Items.Add(i + " kg");
+                }
+            }
+        }
+
+        private void nud_cantidadMaletas_ValueChanged(object sender, EventArgs e)
+        {
+            cmb_pesoTotal.Items.Clear();
+            if (nud_cantidadMaletas.Value == 1)
+            {
+                for (int i = 1; i < 26; i++)
+                {
+                    cmb_pesoTotal.Items.Add(i + " kg.");
+                }
+            }
+            if(nud_cantidadMaletas.Value == 2)
+            {
+                for (int i = 1; i < 43; i++)
+                {
+                    cmb_pesoTotal.Items.Add(i + " kg.");
                 }
             }
         }

@@ -151,7 +151,6 @@
             this.cmb_clasePasajero.Size = new System.Drawing.Size(121, 23);
             this.cmb_clasePasajero.TabIndex = 11;
             this.cmb_clasePasajero.SelectedIndexChanged += new System.EventHandler(this.cb_clasePasajero_SelectedIndexChanged);
-            this.cmb_clasePasajero.ValueMemberChanged += new System.EventHandler(this.cmb_clasePasajero_ValueMemberChanged);
             // 
             // nud_cantidadMaletas
             // 
@@ -159,6 +158,7 @@
             this.nud_cantidadMaletas.Name = "nud_cantidadMaletas";
             this.nud_cantidadMaletas.Size = new System.Drawing.Size(55, 23);
             this.nud_cantidadMaletas.TabIndex = 12;
+            this.nud_cantidadMaletas.ValueChanged += new System.EventHandler(this.nud_cantidadMaletas_ValueChanged);
             // 
             // lbl_pesoTotal
             // 
@@ -205,7 +205,6 @@
             this.cmb_pesoTotal.Size = new System.Drawing.Size(121, 23);
             this.cmb_pesoTotal.TabIndex = 18;
             this.cmb_pesoTotal.SelectedIndexChanged += new System.EventHandler(this.cmb_pesoTotal_SelectedIndexChanged);
-            this.cmb_pesoTotal.ValueMemberChanged += new System.EventHandler(this.cmb_pesoTotal_ValueMemberChanged);
             // 
             // VentaBoletos
             // 

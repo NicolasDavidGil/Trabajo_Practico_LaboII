@@ -46,40 +46,41 @@
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
             this.btn_informacionVuelos = new System.Windows.Forms.Button();
             this.lbl_vueloLleno = new System.Windows.Forms.Label();
+            this.btnEditarVuelo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(13, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(112, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "Nombre de usuario:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 42);
+            this.label2.Location = new System.Drawing.Point(12, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.Size = new System.Drawing.Size(110, 15);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "Nombre empleado:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 77);
+            this.label3.Location = new System.Drawing.Point(12, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.Size = new System.Drawing.Size(92, 15);
             this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.label3.Text = "Nivel de acceso:";
             // 
             // lbl_nombreVendedor
             // 
             this.lbl_nombreVendedor.AutoSize = true;
-            this.lbl_nombreVendedor.Location = new System.Drawing.Point(108, 42);
+            this.lbl_nombreVendedor.Location = new System.Drawing.Point(149, 68);
             this.lbl_nombreVendedor.Name = "lbl_nombreVendedor";
             this.lbl_nombreVendedor.Size = new System.Drawing.Size(102, 15);
             this.lbl_nombreVendedor.TabIndex = 3;
@@ -88,7 +89,7 @@
             // lbl_userName
             // 
             this.lbl_userName.AutoSize = true;
-            this.lbl_userName.Location = new System.Drawing.Point(108, 9);
+            this.lbl_userName.Location = new System.Drawing.Point(149, 102);
             this.lbl_userName.Name = "lbl_userName";
             this.lbl_userName.Size = new System.Drawing.Size(61, 15);
             this.lbl_userName.TabIndex = 4;
@@ -97,7 +98,7 @@
             // lbl_acceso
             // 
             this.lbl_acceso.AutoSize = true;
-            this.lbl_acceso.Location = new System.Drawing.Point(108, 77);
+            this.lbl_acceso.Location = new System.Drawing.Point(149, 130);
             this.lbl_acceso.Name = "lbl_acceso";
             this.lbl_acceso.Size = new System.Drawing.Size(70, 15);
             this.lbl_acceso.TabIndex = 5;
@@ -178,7 +179,6 @@
             this.lbl_vuelosActivos.Size = new System.Drawing.Size(909, 78);
             this.lbl_vuelosActivos.TabIndex = 12;
             this.lbl_vuelosActivos.Text = "NO HAY VUELOS ACTIVOS";
-            this.lbl_vuelosActivos.Click += new System.EventHandler(this.lbl_vuelosActivos_Click);
             // 
             // lbl_datosYaCargados
             // 
@@ -203,7 +203,7 @@
             // 
             // btn_cerrarSesion
             // 
-            this.btn_cerrarSesion.Location = new System.Drawing.Point(946, 322);
+            this.btn_cerrarSesion.Location = new System.Drawing.Point(962, 33);
             this.btn_cerrarSesion.Name = "btn_cerrarSesion";
             this.btn_cerrarSesion.Size = new System.Drawing.Size(97, 84);
             this.btn_cerrarSesion.TabIndex = 15;
@@ -232,11 +232,23 @@
             this.lbl_vueloLleno.TabIndex = 17;
             this.lbl_vueloLleno.Text = "NO QUEDAN LUGARES LIBRES EN ESTE VUELO";
             // 
+            // btnEditarVuelo
+            // 
+            this.btnEditarVuelo.Enabled = false;
+            this.btnEditarVuelo.Location = new System.Drawing.Point(946, 322);
+            this.btnEditarVuelo.Name = "btnEditarVuelo";
+            this.btnEditarVuelo.Size = new System.Drawing.Size(97, 84);
+            this.btnEditarVuelo.TabIndex = 18;
+            this.btnEditarVuelo.Text = "EDITAR VUELO";
+            this.btnEditarVuelo.UseVisualStyleBackColor = true;
+            this.btnEditarVuelo.Click += new System.EventHandler(this.btnEditarVuelo_Click);
+            // 
             // UserMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 602);
+            this.Controls.Add(this.btnEditarVuelo);
             this.Controls.Add(this.lbl_vueloLleno);
             this.Controls.Add(this.btn_informacionVuelos);
             this.Controls.Add(this.btn_cerrarSesion);
@@ -284,5 +296,6 @@
         private System.Windows.Forms.Button btn_cerrarSesion;
         private System.Windows.Forms.Button btn_informacionVuelos;
         private System.Windows.Forms.Label lbl_vueloLleno;
+        private System.Windows.Forms.Button btnEditarVuelo;
     }
 }

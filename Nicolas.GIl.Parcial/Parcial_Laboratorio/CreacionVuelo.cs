@@ -75,8 +75,11 @@ namespace Parcial_Laboratorio
             for (int i = 0; i < Aerolinea.misDestinos.Count; i += 1)
             {
                 if (comboBox_origen.Text == "Buenos Aires")
-                {                    
-                    comboBox_destino.Items.Add(Aerolinea.misDestinos[i]);
+                {   
+                    if(Aerolinea.misDestinos[i] != "Buenos Aires")
+                    {
+                        comboBox_destino.Items.Add(Aerolinea.misDestinos[i]);
+                    }                    
                 }
                 else
                 {                   
@@ -96,56 +99,65 @@ namespace Parcial_Laboratorio
 
         private void CreacionVuelo_Load(object sender, EventArgs e)
         {
-            lbl_camposVacios.Visible = false;
-            comboBox_origen.Items.Add("Buenos Aires");
+            lbl_camposVacios.Visible = false;            
             for (int i = 0; i < Aerolinea.misDestinos.Count; i++)
             {
                 comboBox_origen.Items.Add(Aerolinea.misDestinos[i]);
             }
-
-            comboBox_aviones.Items.Clear();
-            for (int i = 0; i < Aerolinea.misAviones.Count; i++)
-            {
-                if(DateTime.Compare(dtp_fechaSalida.Value, DateTime.Today) == 0)
-                {
-                    if(Aerolinea.misAviones[i].EstadoAvion == true)
-                    {
-                        comboBox_aviones.Items.Add(Aerolinea.misAviones[i].Matricula);
-                    }
-                }else if(DateTime.Compare(dtp_fechaSalida.Value, DateTime.Today) > 0)
-                {
-                    Aerolinea.ReiniciarVuelo();
-                    if (Aerolinea.misAviones[i].EstadoAvion == true)
-                    {
-                        comboBox_aviones.Items.Add(Aerolinea.misAviones[i].Matricula);
-                    }
-                }
-                
-            }
+            
             dtp_fechaSalida.MinDate = DateTime.Now;
-
         }
 
         private void dtm_horaSalida_ValueChanged(object sender, EventArgs e)
         {
-            DateTime ahora = new DateTime();            
+            DateTime ahora = new();     
+            
 
             if (String.Compare(dtp_fechaSalida.Value.Day.ToString(), DateTime.Today.Day.ToString()) == 0)
             {
+                ahora = DateTime.Now;
+                ahora = ahora.AddHours(1);
+                cmb_horaPartida.Items.Clear();
                 int x = int.Parse(DateTime.Now.Hour.ToString());                
-                for (int i = x; i < 24; i++)
-                {
-                    cmb_horaPartida.Items.Add(ahora.ToString("hh:mm tt"));                   
+                for (int i = x +1; i < 24; i++)
+                {                                        
+                    cmb_horaPartida.Items.Add(ahora.ToString("hh:00 tt"));                   
                     ahora = ahora.AddHours(1);
                 }                
             }else if (String.Compare(dtp_fechaSalida.Value.Day.ToString(), DateTime.Today.Day.ToString()) > 0)
-            {                
+            {
+                cmb_horaPartida.Items.Clear();
                 for (int i = 0; i < 24; i++)
                 {                    
                     cmb_horaPartida.Items.Add(ahora.ToString("hh:mm tt"));
                     ahora = ahora.AddHours(1);
                 }
+            }            
+
+            if (String.Compare(dtp_fechaSalida.Value.Day.ToString(), DateTime.Today.Day.ToString()) == 0)
+            {
+                comboBox_aviones.Items.Clear();
+                for (int i = 0; i < Aerolinea.misAviones.Count; i++)
+                {
+                    if (Aerolinea.misAviones[i].EstadoAvion == true)
+                    {
+                        comboBox_aviones.Items.Add(Aerolinea.misAviones[i].Matricula);
+                    }
+                }
             }
+            else if (dtp_fechaSalida.Value.Day > DateTime.Today.Day)
+            {
+                comboBox_aviones.Items.Clear();
+                Aerolinea.ReiniciarVuelo();
+                for (int i = 0; i < Aerolinea.misAviones.Count; i++)
+                {
+                    if (Aerolinea.misAviones[i].EstadoAvion == true)
+                    {
+                        comboBox_aviones.Items.Add(Aerolinea.misAviones[i].Matricula);
+                    }
+                }
+            }
+
 
         }
     }

@@ -68,6 +68,7 @@ namespace Parcial_Library
         public int Duracion
         {
             get { return duracion; }
+            set { duracion = value; }
         }
 
         public int AsientosLibresT

@@ -40,7 +40,8 @@ namespace Parcial_Laboratorio
 
         private void btn_ventaPasajes_Click(object sender, EventArgs e)
         {
-            if (Aerolinea.vuelosActivos[Aerolinea.index].AsientosLibresP > 0 && Aerolinea.vuelosActivos[Aerolinea.index].AsientosLibresT > 0)
+            if (Aerolinea.vuelosActivos[Aerolinea.index].AsientosLibresP > 0 
+                && Aerolinea.vuelosActivos[Aerolinea.index].AsientosLibresT > 0)
             {
                 VentaBoletos nuevaVenta = new VentaBoletos();
                 this.Hide();
@@ -86,7 +87,10 @@ namespace Parcial_Laboratorio
 
         private void btn_informacionVuelos_Click(object sender, EventArgs e)
         {
-
+            InfoVuelos infoVuelos = new InfoVuelos();
+            this.Hide();
+            infoVuelos.ShowDialog();
+            this.Show();
         }
 
         private void UserMenu_Load(object sender, EventArgs e)
@@ -121,18 +125,22 @@ namespace Parcial_Laboratorio
             {
                 btn_ventaPasajes.Enabled = true;
                 btn_detalles.Enabled = true;
+                btnEditarVuelo.Enabled = true;
             }
-        }
-
-        private void lbl_vuelosActivos_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_detalles_Click(object sender, EventArgs e)
         {
             DetallesVuelo nuevaVentana = new DetallesVuelo();
             nuevaVentana.Show();
+        }
+
+        private void btnEditarVuelo_Click(object sender, EventArgs e)
+        {
+            EditarVuelo nuevaVentana = new EditarVuelo();
+            this.Hide();
+            nuevaVentana.ShowDialog();
+            this.Show();
         }
     }
 }
