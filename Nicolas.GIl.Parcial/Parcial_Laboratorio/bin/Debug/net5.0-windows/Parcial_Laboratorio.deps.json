@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Parcial_Laboratorio/1.0.0": {
+        "dependencies": {
+          "Parcial_Library": "1.0.0"
+        },
+        "runtime": {
+          "Parcial_Laboratorio.dll": {}
+        }
+      },
+      "Parcial_Library/1.0.0": {
+        "runtime": {
+          "Parcial_Library.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Parcial_Laboratorio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Parcial_Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
