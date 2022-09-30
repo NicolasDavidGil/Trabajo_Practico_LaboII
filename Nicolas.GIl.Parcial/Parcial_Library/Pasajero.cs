@@ -6,21 +6,46 @@ using System.Threading.Tasks;
 
 namespace Parcial_Library
 {
-    public class Pasajero : Persona
+    public class Pasajero
     {
+        Cliente clientePasajero;
         private string claseVuelo;
         private float equipajeBodega;
-        private bool equipajeMano;
-        private int edadPasajero;
+        private bool equipajeMano;        
         private int cantidadMaletas;
-        public Pasajero(string claseVuelo, float equipajeBodega, bool equipajeMano, int edadPasajero, string nombrePasajero, int documentoPasajero, int cantidadMaletas) : base(nombrePasajero, documentoPasajero)
+        private float precioVuelo;
+
+        public Pasajero(string claseVuelo, float equipajeBodega, bool equipajeMano, int cantidadMaletas, Cliente clientePasajero)             
         {
             this.claseVuelo = claseVuelo;
             this.equipajeBodega = equipajeBodega;
             this.equipajeMano = equipajeMano;
-            this.edadPasajero = edadPasajero;
             this.cantidadMaletas = cantidadMaletas;
+            this.clientePasajero = clientePasajero;
+        } 
+        
+        public Pasajero(string claseVuelo, float equipajeBodega, bool equipajeMano, int cantidadMaletas, Cliente clientePasajero, float precioVuelo) :
+            this(claseVuelo, equipajeBodega, equipajeMano, cantidadMaletas, clientePasajero)
+        {
+            this.precioVuelo = precioVuelo;
         }
+
+        public string ClienteNombre
+        {
+            get { return clientePasajero.NombrePersona; }
+            set { clientePasajero.NombrePersona = value; }
+        }
+
+        public string ClienteDocumento
+        {
+            get { return clientePasajero.DocumentoPersona.ToString(); }
+        }
+
+        public string ClienteEdad
+        {
+            get { return clientePasajero.EdadPersona.ToString(); }
+        }
+
 
         public string ClaseVuelo
         {
@@ -30,16 +55,37 @@ namespace Parcial_Library
         public float EquipajeBodega
         {
             get { return equipajeBodega;}
+            set { equipajeBodega = value; }
         }
 
         public bool EquipajeMano
         {
             get { return equipajeMano;}
         }
-
-        public int EdadPasajero
+       
+        public int CantidadMaletas
         {
-            get { return edadPasajero;}
+            get { return cantidadMaletas; }
+            set { cantidadMaletas = value; }
+        }
+
+        public float PrecioVuelo
+        {
+            get { return precioVuelo;}
+            set { precioVuelo = value; }
+        }
+
+        public static float CalcularPrecioNeto(float precioBruto, string auxTipoPasajero)
+        {
+            float precioFinal;
+
+            precioFinal = (float)(precioBruto * 1.21);
+
+            if ("Primera".Equals(auxTipoPasajero))
+            {
+                precioFinal *= (float)1.15;                
+            }
+            return precioFinal;
         }
 
     }

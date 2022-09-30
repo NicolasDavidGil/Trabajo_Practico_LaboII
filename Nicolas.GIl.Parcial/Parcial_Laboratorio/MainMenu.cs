@@ -17,55 +17,67 @@ namespace Parcial_Laboratorio
         public MainMenu()
         {
             InitializeComponent();
-            HardCodeo.InicializarVendedores(Aerolinea.listadoVendedores);
-            contadorAutocompletar = 1;
-            lbl_datosIncorrectos.Visible = false;
         }
 
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
             bool entroOk = false;
-
-            for(int i = 0; i < Aerolinea.listadoVendedores.Count; i++)
+         
+            foreach (KeyValuePair<int, Vendedor> i in Aerolinea.Usuarios)
             {
-                if(txt_userName.Text == Aerolinea.listadoVendedores[i].UsuarioLogin
-                    && txt_password.Text == Aerolinea.listadoVendedores[i].UsuarioPassword)
+                if (txt_userName.Text == i.Value.UsuarioLogin
+                    && txt_password.Text == i.Value.UsuarioPassword)
                 {
                     entroOk = true;
-                    Aerolinea.vendedorActivo = new Vendedor(Aerolinea.listadoVendedores[i].UsuarioLogin,
-                                                            Aerolinea.listadoVendedores[i].UsuarioPassword,
-                                                            Aerolinea.listadoVendedores[i].NombrePersona,
-                                                            Aerolinea.listadoVendedores[i].DocumentoPersona,
-                                                            Aerolinea.listadoVendedores[i].NivelAcceso);
-                    UserMenu userMenu = new UserMenu();
-                    userMenu.Show();
+                    Aerolinea.vendedorActivo = new Vendedor(i.Value.UsuarioLogin,
+                                                            i.Value.UsuarioPassword,
+                                                            i.Value.NombrePersona,
+                                                            i.Value.DocumentoPersona,
+                                                            i.Value.EdadPersona,
+                                                            i.Value.NivelAcceso);
+                    UserMenu userMenu = new();
                     this.Hide();
+                    userMenu.ShowDialog();
+                    this.Show();
                     break;
                 }
             }
-            if(entroOk == false)
+            if (entroOk == false)
             {
                 lbl_datosIncorrectos.Visible = true;
-            }
+            }          
         }
 
         private void btn_autocompletar_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < contadorAutocompletar; i++)
-            {
-                txt_userName.Text = Aerolinea.listadoVendedores[i].UsuarioLogin;
-                txt_password.Text = Aerolinea.listadoVendedores[i].UsuarioPassword;
+            for (int i = 1; i <= contadorAutocompletar; i++)
+            {                
+                txt_userName.Text = Aerolinea.Usuarios[i].UsuarioLogin;
+                txt_password.Text = Aerolinea.Usuarios[i].UsuarioPassword;
             }
             contadorAutocompletar++;
-            if (contadorAutocompletar > Aerolinea.listadoVendedores.Count)
+            if (contadorAutocompletar > Aerolinea.Usuarios.Count)
             {
-                contadorAutocompletar = 1;
+                contadorAutocompletar = 1;                
             }
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            HardCodeo.InicializarDatos();
+            contadorAutocompletar = 1;
+            lbl_datosIncorrectos.Visible = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTimer.Text = DateTime.Now.ToLongTimeString();
+            lblDate.Text = DateTime.Now.ToShortDateString();
         }
     }
 }

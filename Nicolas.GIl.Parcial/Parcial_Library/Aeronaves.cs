@@ -43,6 +43,7 @@ namespace Parcial_Library
         public string Matricula
         {
             get { return matricula; }
+            set { matricula = value; }
         }
         public int CantidadAsientos
         {
@@ -86,7 +87,5 @@ namespace Parcial_Library
             get { return vueloAsignado; }
             set { vueloAsignado = value; }
         }
-
-
     }
 }

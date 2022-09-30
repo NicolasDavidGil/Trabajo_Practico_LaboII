@@ -27,3 +27,6 @@ C:\Users\gpnic\OneDrive\Escritorio\Parcial_Labo2\Nicolas.GIl.Parcial\Parcial_Lab
 C:\Users\gpnic\OneDrive\Escritorio\Parcial_Labo2\Nicolas.GIl.Parcial\Parcial_Laboratorio\obj\Debug\net5.0-windows\Parcial_Laboratorio.Estadisticas.resources
 C:\Users\gpnic\OneDrive\Escritorio\Parcial_Labo2\Nicolas.GIl.Parcial\Parcial_Laboratorio\obj\Debug\net5.0-windows\Parcial_Laboratorio.EditarVuelo.resources
 C:\Users\gpnic\OneDrive\Escritorio\Parcial_Labo2\Nicolas.GIl.Parcial\Parcial_Laboratorio\obj\Debug\net5.0-windows\Parcial_Laboratorio.InfoVuelos.resources
+C:\Users\gpnic\OneDrive\Escritorio\Parcial_Labo2\Nicolas.GIl.Parcial\Parcial_Laboratorio\obj\Debug\net5.0-windows\Parcial_Laboratorio.BusquedaCliente.resources
+C:\Users\gpnic\OneDrive\Escritorio\Parcial_Labo2\Nicolas.GIl.Parcial\Parcial_Laboratorio\obj\Debug\net5.0-windows\Parcial_Laboratorio.NuevoCliente.resources
+C:\Users\gpnic\OneDrive\Escritorio\Parcial_Labo2\Nicolas.GIl.Parcial\Parcial_Laboratorio\obj\Debug\net5.0-windows\Parcial_Laboratorio.EdicionVendedores.resources

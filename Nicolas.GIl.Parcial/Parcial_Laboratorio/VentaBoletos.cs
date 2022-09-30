@@ -18,66 +18,69 @@ namespace Parcial_Laboratorio
             InitializeComponent();
         }
 
+        private void VentaBoletos_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Aerolinea.clasesVuelo.Count; i++)
+            {
+                cmb_clasePasajero.Items.Add(Aerolinea.clasesVuelo[i]);
+            }
+
+            lblNombrePasajero.Text = Aerolinea.clienteHistorial[Aerolinea.indexCliente].NombrePersona;
+            lblDniPasajero.Text = Aerolinea.clienteHistorial[Aerolinea.indexCliente].DocumentoPersona.ToString();
+            lblEdadPasajero.Text = Aerolinea.clienteHistorial[Aerolinea.indexCliente].EdadPersona.ToString();
+            lblCodigoVuelo.Text = Aerolinea.vuelosActivos[Aerolinea.index].Codigo;
+            lblOrigenVuelo.Text = Aerolinea.vuelosActivos[Aerolinea.index].Origen;
+            lblDestinoVuelo.Text = Aerolinea.vuelosActivos[Aerolinea.index].Destinos;
+        }
+
         private void btn_confirmarVenta_Click(object sender, EventArgs e)
         {
-            int contador = 0;
-
-            while(contador < int.Parse(txt_cantidadPasajeros.Text))
+            if (!String.IsNullOrEmpty(cmb_clasePasajero.Text) && !String.IsNullOrEmpty(cmb_pesoTotal.Text) &&
+                !String.IsNullOrEmpty(nud_cantidadMaletas.ToString()))
             {
-                if(txt_nombrePasajero.Text != String.Empty && txt_documentoPasajero.Text != String.Empty &&
-                    txt_edadPasajero.Text != String.Empty && cmb_pesoTotal.Text != String.Empty &&
-                    cmb_clasePasajero.Text != String.Empty)
+                Pasajero auxPasajero;
+
+                auxPasajero = new Pasajero(cmb_clasePasajero.Text, float.Parse(cmb_pesoTotal.Text), 
+                                            cb_equipajeMano.Checked, (int)nud_cantidadMaletas.Value, 
+                                            Aerolinea.clienteHistorial[Aerolinea.indexCliente]);
+                if (auxPasajero != null)
                 {
-                    if (Validador.ValidadarIngresaString(txt_nombrePasajero.Text) && Validador.ValidarIngresoNumero(txt_documentoPasajero.Text) &&
-                        Validador.ValidarIngresoNumero(txt_edadPasajero.Text) && Validador.ValidadarIngresaString(cmb_pesoTotal.Text))
-                    {
-                        if (Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero is not null)
-                        {
-                            Pasajero pasajeroAux = new Pasajero(cmb_clasePasajero.Text, float.Parse(cmb_pesoTotal.Text),
-                                                                bool.Parse(cb_equipajeMano.Text), int.Parse(txt_edadPasajero.Text),
-                                                                txt_nombrePasajero.Text, int.Parse(txt_documentoPasajero.Text),
-                                                                int.Parse(nud_cantidadMaletas.ToString()));
-                            Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero.Add(pasajeroAux);                            
-                        } else
-                        {
-                            List<Pasajero> lista = new List<Pasajero>();
-                            Pasajero pasajeroAux = new Pasajero(cmb_clasePasajero.Text, float.Parse(cmb_pesoTotal.Text),
-                                                                bool.Parse(cb_equipajeMano.Text), int.Parse(txt_edadPasajero.Text),
-                                                                txt_nombrePasajero.Text, int.Parse(txt_documentoPasajero.Text),
-                                                                int.Parse(nud_cantidadMaletas.ToString()));
-                            lista.Add(pasajeroAux);
-                            Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero = lista;
-                        }
-                    }
+                    Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero.Add(auxPasajero);
+                    Aerolinea.index = -1;
+                    Aerolinea.indexCliente = -1;
+                    DialogResult = DialogResult.OK;
                 }
-                contador++;
             }
-            DialogResult = DialogResult.OK;
+            
         }
 
         private void btn_cancelarVenta_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            Aerolinea.index = -1;
+            Aerolinea.indexCliente = -1;
+            this.Close();
         }
 
         private void cb_clasePasajero_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmb_clasePasajero.Text == "Primera")
             {
-                nud_cantidadMaletas.Maximum = 2;      
+                nud_cantidadMaletas.Maximum = 2;
+                lblPrecioBruto.Refresh();
+                lblPrecioBruto.Text = Aerolinea.vuelosActivos[Aerolinea.index].PrecioVuelo.ToString();
+                lblPrecioFinal.Refresh();
+                lblPrecioFinal.Text = Pasajero.CalcularPrecioNeto(Aerolinea.vuelosActivos[Aerolinea.index].PrecioVuelo, cmb_clasePasajero.Text).ToString();
             }else
             {
                 nud_cantidadMaletas.Maximum = 1;
+                lblPrecioBruto.Refresh();
+                lblPrecioBruto.Text = Aerolinea.vuelosActivos[Aerolinea.index].PrecioVuelo.ToString();
+                lblPrecioFinal.Refresh();
+                lblPrecioFinal.Text = Pasajero.CalcularPrecioNeto(Aerolinea.vuelosActivos[Aerolinea.index].PrecioVuelo, cmb_clasePasajero.Text).ToString();
             }                        
         }
 
-        private void VentaBoletos_Load(object sender, EventArgs e)
-        {                
-            for(int i = 0; i < Aerolinea.clasesVuelo.Count; i++)
-            {
-                cmb_clasePasajero.Items.Add(Aerolinea.clasesVuelo[i]);
-            }            
-        }
+       
     
         private void cmb_pesoTotal_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -86,7 +89,7 @@ namespace Parcial_Laboratorio
                 cmb_pesoTotal.ResetText();
                 for (int i = 0; i < 25; i++)
                 {
-                    cmb_pesoTotal.Items.Add(i + " kg.");
+                    cmb_pesoTotal.Items.Add(i);
                 }
             }
             if (cmb_clasePasajero.Text == "Primera" && nud_cantidadMaletas.Value == 1)
@@ -94,7 +97,7 @@ namespace Parcial_Laboratorio
                 cmb_pesoTotal.ResetText();
                 for (int i = 1; i <= 21; i++)
                 {
-                    cmb_pesoTotal.Items.Add(i + " kg");
+                    cmb_pesoTotal.Items.Add(i);
                 }
             }
             if (cmb_clasePasajero.Text == "Primera" && nud_cantidadMaletas.Value == 2)
@@ -102,7 +105,7 @@ namespace Parcial_Laboratorio
                 cmb_pesoTotal.ResetText();
                 for (int i = 1; i <= 42; i++)
                 {
-                    cmb_pesoTotal.Items.Add(i + " kg");
+                    cmb_pesoTotal.Items.Add(i);
                 }
             }
         }
@@ -114,14 +117,14 @@ namespace Parcial_Laboratorio
             {
                 for (int i = 1; i < 26; i++)
                 {
-                    cmb_pesoTotal.Items.Add(i + " kg.");
+                    cmb_pesoTotal.Items.Add(i);
                 }
             }
             if(nud_cantidadMaletas.Value == 2)
             {
                 for (int i = 1; i < 43; i++)
                 {
-                    cmb_pesoTotal.Items.Add(i + " kg.");
+                    cmb_pesoTotal.Items.Add(i);
                 }
             }
         }

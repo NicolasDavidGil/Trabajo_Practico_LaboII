@@ -50,7 +50,8 @@ namespace Parcial_Laboratorio
                                         designada.AsientosPrimera,
                                         designada,
                                         fechaSalida,
-                                        horaLlegada);
+                                        horaLlegada,
+                                        Vuelo.CalcularPrecioBrutoVuelo(duracionVuelo));
 
                 Aerolinea.vuelosActivos.Add(nuevoVuelo);
                 Aerolinea.nuestraAerolinea.CantidadVuelos++;

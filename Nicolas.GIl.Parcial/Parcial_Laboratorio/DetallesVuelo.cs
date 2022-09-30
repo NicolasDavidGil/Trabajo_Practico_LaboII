@@ -20,32 +20,82 @@ namespace Parcial_Laboratorio
 
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Aerolinea.index = -1;
+            DialogResult = DialogResult.Cancel;
         }
 
         private void DetallesVuelo_Load(object sender, EventArgs e)
         {
-            lbl_pasajerosCargados.Visible = false;
-            InicializarFormDetalles();
+            lblVueloVacio.Visible = true;
+            dtgCodigoVuelos.DataSource = null;
+            dtgCodigoVuelos.DataSource = Aerolinea.vuelosActivos;
         }
 
         private void InicializarFormDetalles()
         {
-            lbl_codigoVuelo.Text = Aerolinea.vuelosActivos[Aerolinea.index].Codigo;
-            lbl_origenVuelo.Text = Aerolinea.vuelosActivos[Aerolinea.index].Origen;
-            lbl_destinoVuelo.Text = Aerolinea.vuelosActivos[Aerolinea.index].Destinos;
-            lbl_fechaPartida.Text = Aerolinea.vuelosActivos[Aerolinea.index].FechaPartida;
-            lbl_horaPartida.Text = Aerolinea.vuelosActivos[Aerolinea.index].HoraPartida;
-            lbl_horaLlegada.Text = Aerolinea.vuelosActivos[Aerolinea.index].HoraArribo;            
+            int cantTurista, cantPrimera, contadorMaletas;
+            float acumuladorBodega;
+            cantTurista = 0;
+            cantPrimera = 0;
+            contadorMaletas = 0;
+            acumuladorBodega = 0;
 
-            if(Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero is not null)
+            for(int i = 0; i < Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero.Count; i++)
             {
-                dgv_listaPasajeros.DataSource = null;
-                dgv_listaPasajeros.DataSource = Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero; ;
-            }else
-            {
-                lbl_pasajerosCargados.Visible = true;
-            }            
+                if (Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero[i].ClaseVuelo == "Turista")
+                {
+                    cantTurista++;
+                    acumuladorBodega += Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero[i].EquipajeBodega;
+                    contadorMaletas += Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero[i].CantidadMaletas;
+                }
+                else
+                {
+                    cantPrimera++;
+                    acumuladorBodega += Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero[i].EquipajeBodega;
+                    contadorMaletas += Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero[i].CantidadMaletas;
+                }
+            }
+
+            lblOrigenVuelo.Text = Aerolinea.vuelosActivos[Aerolinea.index].Origen;
+            lblDestinoVuelo.Text = Aerolinea.vuelosActivos[Aerolinea.index].Destinos;
+            lblFechaPartida.Text = Aerolinea.vuelosActivos[Aerolinea.index].FechaPartida;
+            lblHoraPartida.Text = Aerolinea.vuelosActivos[Aerolinea.index].HoraPartida;
+            lblHoraLlegada.Text = Aerolinea.vuelosActivos[Aerolinea.index].HoraArribo;
+            lblTotalPasajeros.Text = (cantPrimera + cantTurista).ToString();
+            lblPasajerosTurista.Text = cantTurista.ToString();
+            lblPasajerosPrimera.Text = cantPrimera.ToString();
+            lblTotalMaletas.Text = contadorMaletas.ToString();
+            lblPesoTotal.Text = acumuladorBodega.ToString();
+            lblAvionDesignada.Text = Aerolinea.vuelosActivos[Aerolinea.index].AeronaveMatricula;
+        }
+
+        private void RefreshLabels()
+        {
+            lblOrigenVuelo.Refresh();
+            lblDestinoVuelo.Refresh();
+            lblFechaPartida.Refresh();
+            lblHoraPartida.Refresh();
+            lblHoraLlegada.Refresh();
+            lblTotalPasajeros.Refresh();
+            lblPasajerosTurista.Refresh();
+            lblPasajerosPrimera.Refresh();
+            lblTotalMaletas.Refresh();
+            lblPesoTotal.Refresh();
+            lblAvionDesignada.Refresh();
+        }
+
+            private void dtgCodigoVuelos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Aerolinea.index = e.RowIndex;
+            if(Aerolinea.index != -1)
+            {                                
+                lblVueloVacio.Visible = false;
+                dtgListaPasajeros.Refresh();
+                RefreshLabels();
+                InicializarFormDetalles();
+                dtgListaPasajeros.DataSource = null;
+                dtgListaPasajeros.DataSource = Aerolinea.vuelosActivos[Aerolinea.index].ListaPasajero;
+            }
         }
     }
 }

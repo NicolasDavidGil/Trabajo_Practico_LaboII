@@ -49,7 +49,7 @@ namespace Parcial_Library
             {
                 for (int i = 0; i < cadena.Length; i++)
                 {
-                    if (!char.IsLetter(cadena[i]))
+                    if (!char.IsLetter(cadena[i]) && char.IsWhiteSpace(cadena[i]) != true)
                     {
                         validacionLetra = false;
                         break;
@@ -67,7 +67,7 @@ namespace Parcial_Library
             {
                 for (int i = 0; i < cadena.Length; i++)
                 {
-                    if (!char.IsLetter(cadena[i]) && !char.IsDigit(cadena[i]))
+                    if (!char.IsLetter(cadena[i]) && !char.IsDigit(cadena[i]) && char.IsWhiteSpace(cadena[i]) != true)
                     {
                         validacionLetra = false;
                         break;

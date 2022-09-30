@@ -25,16 +25,22 @@ namespace Parcial_Laboratorio
 
         private void InfoVuelos_Load(object sender, EventArgs e)
         {
-            for(int i = 0; i < Aerolinea.vuelosActivos.Count; i++)
-            {
-                if (Aerolinea.vuelosActivos[i].Estado == "Finalizado")
-                {
-                    dtgInfoVuelosTerminados.DataSource = Aerolinea.vuelosActivos[i];
-                }else
-                {
-                    dtgInfoVuelosActivos.DataSource = Aerolinea.vuelosActivos[i];
-                }
-            }
+            int vuelosTotales;
+
+            lblNombreUsuario.Text = Aerolinea.vendedorActivo.UsuarioLogin;
+            lblVuelosActivos.Text = Aerolinea.vuelosActivos.Count.ToString();
+            lblVuelosFinalizados.Text = Aerolinea.vuelosFinalizados.Count.ToString();
+            vuelosTotales = Aerolinea.vuelosActivos.Count + Aerolinea.vuelosFinalizados.Count;
+            lblVuelosTotales.Text = vuelosTotales.ToString();
+            dtgInfoVuelosActivos.DataSource = null;
+            dtgInfoVuelosActivos.DataSource = Aerolinea.vuelosActivos;
+            dtgInfoVuelosTerminados.DataSource = null;
+            dtgInfoVuelosTerminados.DataSource = Aerolinea.vuelosFinalizados;         
+        }
+
+        private void dtgInfoVuelosActivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

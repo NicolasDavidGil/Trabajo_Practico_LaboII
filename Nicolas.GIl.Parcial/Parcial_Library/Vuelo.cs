@@ -20,10 +20,10 @@ namespace Parcial_Library
         private string destinos;
         Aeronave aeronaveDesignada;
         List<Pasajero> pasajeroList;
+        private float precioVuelo;
 
-
-        public Vuelo(string codigo, string origen, string destinos, string horaPartida, int duracion, int asientosLibresTurista, 
-                    string estado, int asientosLibresPrimera, Aeronave aeronaveDesignada, string fechaPartida, string horaArribo)
+        public Vuelo(string codigo, string origen, string destinos, string horaPartida, int duracion, int asientosLibresTurista,
+                    string estado, int asientosLibresPrimera, Aeronave aeronaveDesignada, string fechaPartida, string horaArribo, float precioVuelo)
         {
             this.codigo = codigo;
             this.origen = origen;
@@ -36,14 +36,9 @@ namespace Parcial_Library
             this.aeronaveDesignada = aeronaveDesignada;
             this.fechaPartida = fechaPartida;
             this.horaArribo = horaArribo;
+            this.precioVuelo = CalcularPrecioBrutoVuelo(duracion);
+            this.pasajeroList = new List<Pasajero>();
         }
-        public Vuelo(string codigo, string origen, string destinos, string horaPartida, int duracion, int asientosLibresTurista, string estado, int asientosLibresPrimera, 
-                    Aeronave aeronaveDesignada, string fechaPartida, string horaArribo, List<Pasajero> pasajeroList) 
-                    : this(codigo, origen, destinos, horaPartida, duracion, asientosLibresTurista, estado, asientosLibresPrimera, aeronaveDesignada, fechaPartida, horaArribo)
-        {
-            this.pasajeroList = pasajeroList;
-        }
-
 
         public string Codigo
         {
@@ -88,6 +83,17 @@ namespace Parcial_Library
             set { estado = value; }
         }
 
+        public bool AeronaveEstado
+        {
+            get { return aeronaveDesignada.EstadoAvion; }
+            set { aeronaveDesignada.EstadoAvion = value; }
+        }
+        public string AeronaveMatricula
+        {
+            get { return aeronaveDesignada.Matricula; }
+            set { aeronaveDesignada.Matricula = value; }
+        }
+
         public Aeronave AeronaveAsig
         {
             get { return aeronaveDesignada; }
@@ -111,7 +117,12 @@ namespace Parcial_Library
             set { fechaPartida = value; }
         }
 
-        public static string CalcularHorarioLLegada(string horaSalida, string diaSalida, int duracionVuelo)//17/09/2022 08:00 am
+        public float PrecioVuelo
+        {
+            get { return precioVuelo; }
+            set { precioVuelo = value; }
+        }
+        public static string CalcularHorarioLLegada(string horaSalida, string diaSalida, int duracionVuelo)
         {
             string horaLlegada = "Nada";           
             int llegadaInt = 0;
@@ -120,7 +131,7 @@ namespace Parcial_Library
             if(horaSalida is not null)
             {                                  
                 llegadaInt = int.Parse(horaSalida);
-                llegadaInt += duracionVuelo; // +12 am a pm o si pasa de dia)
+                llegadaInt += duracionVuelo; 
 
                 if (horaSalida.Contains('p'))
                 {
@@ -130,7 +141,7 @@ namespace Parcial_Library
                         horaLlegada = llegadaInt.ToString() + ":00 am";                        
                     }else
                     {
-                        horaLlegada = llegadaInt.ToString() + ":00 pm";// 11 + 3 = 14 -12 = 2
+                        horaLlegada = llegadaInt.ToString() + ":00 pm";
                     }
                 }else
                 {
@@ -149,7 +160,7 @@ namespace Parcial_Library
 
         public static string CambiarFechaVuelo(string fecha)
         {
-            DateTime fechaAux = new DateTime();
+            DateTime fechaAux = new();
 
             fechaAux = DateTime.Parse(fecha);
 
@@ -158,5 +169,15 @@ namespace Parcial_Library
             return fechaAux.ToShortDateString();
         }
 
+        public static float CalcularPrecioBrutoVuelo(int duracion)
+        {
+            float retorno;
+
+            retorno = (float)duracion * 50;
+
+
+
+            return retorno;
+        }
     }
 }
