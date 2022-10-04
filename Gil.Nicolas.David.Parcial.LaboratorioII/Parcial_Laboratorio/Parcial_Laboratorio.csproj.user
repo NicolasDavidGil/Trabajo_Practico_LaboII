@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="frmBaseDatosClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmCrearCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmEdicionVuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmEstadisticasEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmEstadoFlota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmHistorialVuelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmNuevoVuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmReestablecerContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmVentaPasaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmVuelosActivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
