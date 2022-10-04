@@ -116,7 +116,7 @@
             // 
             this.ptbUsuario.BackColor = System.Drawing.Color.Black;
             this.ptbUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ptbUsuario.Location = new System.Drawing.Point(308, 49);
+            this.ptbUsuario.Location = new System.Drawing.Point(26, 298);
             this.ptbUsuario.Name = "ptbUsuario";
             this.ptbUsuario.Size = new System.Drawing.Size(254, 298);
             this.ptbUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -126,7 +126,7 @@
             // cobVendedores
             // 
             this.cobVendedores.FormattingEnabled = true;
-            this.cobVendedores.Location = new System.Drawing.Point(26, 49);
+            this.cobVendedores.Location = new System.Drawing.Point(44, 119);
             this.cobVendedores.Name = "cobVendedores";
             this.cobVendedores.Size = new System.Drawing.Size(193, 23);
             this.cobVendedores.TabIndex = 42;
@@ -138,7 +138,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(44, 19);
+            this.label6.Location = new System.Drawing.Point(44, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(160, 17);
             this.label6.TabIndex = 43;
@@ -218,7 +218,7 @@
             this.pnlModificacion.Controls.Add(this.lblModificacion);
             this.pnlModificacion.Controls.Add(this.txtModificacion);
             this.pnlModificacion.Controls.Add(this.btnCancelarEdicion);
-            this.pnlModificacion.Location = new System.Drawing.Point(12, 197);
+            this.pnlModificacion.Location = new System.Drawing.Point(323, 97);
             this.pnlModificacion.Name = "pnlModificacion";
             this.pnlModificacion.Size = new System.Drawing.Size(308, 228);
             this.pnlModificacion.TabIndex = 49;
@@ -228,7 +228,7 @@
             this.lblClienteElegido.AutoSize = true;
             this.lblClienteElegido.BackColor = System.Drawing.Color.Transparent;
             this.lblClienteElegido.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblClienteElegido.Location = new System.Drawing.Point(326, 363);
+            this.lblClienteElegido.Location = new System.Drawing.Point(297, 365);
             this.lblClienteElegido.Name = "lblClienteElegido";
             this.lblClienteElegido.Size = new System.Drawing.Size(71, 17);
             this.lblClienteElegido.TabIndex = 21;
@@ -238,6 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Parcial_Laboratorio.Properties.Resources._06;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(801, 608);
             this.ControlBox = false;
@@ -252,7 +253,7 @@
             this.Controls.Add(this.btnEditarUsuario);
             this.Controls.Add(this.lblClienteElegido);
             this.Name = "frmPersonal";
-            this.Text = "frmPersonal";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmPersonal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbUsuario)).EndInit();
             this.pnlModificacion.ResumeLayout(false);

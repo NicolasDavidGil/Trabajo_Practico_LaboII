@@ -48,6 +48,7 @@
             this.pasajeroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnVender = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).BeginInit();
@@ -65,6 +66,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(91, 43);
             this.btnBuscar.TabIndex = 7;
             this.btnBuscar.Text = "BUSCAR";
+            this.toolTip1.SetToolTip(this.btnBuscar, "Iniciar busqueda");
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -74,6 +76,7 @@
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(549, 23);
             this.txtBusqueda.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.txtBusqueda, "Buscamos por nombre y apellido o dni");
             // 
             // label1
             // 
@@ -99,6 +102,7 @@
             this.btnVolver.Size = new System.Drawing.Size(91, 43);
             this.btnVolver.TabIndex = 8;
             this.btnVolver.Text = "VOLVER";
+            this.toolTip1.SetToolTip(this.btnVolver, "volver al menu principal");
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -215,6 +219,7 @@
             this.btnVender.Size = new System.Drawing.Size(91, 43);
             this.btnVender.TabIndex = 10;
             this.btnVender.Text = "VENDER";
+            this.toolTip1.SetToolTip(this.btnVender, "Proceder a vender");
             this.btnVender.UseVisualStyleBackColor = false;
             this.btnVender.Visible = false;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
@@ -246,7 +251,7 @@
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.label1);
             this.Name = "frmBaseDatosClientes";
-            this.Text = "frmBaseDatosClientes";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmBaseDatosClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
@@ -277,5 +282,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nacionalidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoCivilDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadVuelosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

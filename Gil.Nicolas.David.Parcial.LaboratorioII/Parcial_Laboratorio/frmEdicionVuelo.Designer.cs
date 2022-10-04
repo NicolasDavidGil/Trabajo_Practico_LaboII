@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNumeroDeVuelos = new System.Windows.Forms.Label();
             this.lblCantidadVuelosActivos = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblSalioOk = new System.Windows.Forms.Label();
             this.lblIndiceVacio = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelosActivos)).BeginInit();
             this.pnlConfirmacionFinalizar.SuspendLayout();
             this.SuspendLayout();
@@ -110,6 +112,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(179, 62);
             this.btnCancelar.TabIndex = 26;
             this.btnCancelar.Text = "VOVLER";
+            this.toolTip1.SetToolTip(this.btnCancelar, "Regresar al menu");
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -126,6 +129,7 @@
             this.btnFinalizarVuelo.Size = new System.Drawing.Size(179, 62);
             this.btnFinalizarVuelo.TabIndex = 25;
             this.btnFinalizarVuelo.Text = "FINALIZAR VUELO";
+            this.toolTip1.SetToolTip(this.btnFinalizarVuelo, "Concluir el vuelo elegido");
             this.btnFinalizarVuelo.UseVisualStyleBackColor = false;
             this.btnFinalizarVuelo.Click += new System.EventHandler(this.btnFinalizarVuelo_Click);
             // 
@@ -142,6 +146,7 @@
             this.btnCerrarLista.Size = new System.Drawing.Size(179, 62);
             this.btnCerrarLista.TabIndex = 24;
             this.btnCerrarLista.Text = "CERRAR LISTA PASAJEROS";
+            this.toolTip1.SetToolTip(this.btnCerrarLista, "Pone la lista en lleno");
             this.btnCerrarLista.UseVisualStyleBackColor = false;
             this.btnCerrarLista.Click += new System.EventHandler(this.btnCerrarLista_Click);
             // 
@@ -158,6 +163,7 @@
             this.btnCambiarDuracion.Size = new System.Drawing.Size(179, 62);
             this.btnCambiarDuracion.TabIndex = 23;
             this.btnCambiarDuracion.Text = "CAMBIAR DURACION";
+            this.toolTip1.SetToolTip(this.btnCambiarDuracion, "Cambia la duracion con random, puede volver a salir el mismo");
             this.btnCambiarDuracion.UseVisualStyleBackColor = false;
             this.btnCambiarDuracion.Click += new System.EventHandler(this.btnCambiarDuracion_Click);
             // 
@@ -213,6 +219,7 @@
             this.btnConfirmarFinalizacion.Size = new System.Drawing.Size(97, 46);
             this.btnConfirmarFinalizacion.TabIndex = 3;
             this.btnConfirmarFinalizacion.Text = "CONFIRMAR";
+            this.toolTip1.SetToolTip(this.btnConfirmarFinalizacion, "Finaliza el vuelo y lo elimina de los vuelos activos");
             this.btnConfirmarFinalizacion.UseVisualStyleBackColor = false;
             this.btnConfirmarFinalizacion.Click += new System.EventHandler(this.btnConfirmarFinalizacion_Click);
             // 
@@ -278,6 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Parcial_Laboratorio.Properties.Resources.fondoEdicion;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(877, 450);
             this.ControlBox = false;
@@ -294,7 +302,7 @@
             this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.label5);
             this.Name = "frmEdicionVuelo";
-            this.Text = "frmEdicionVuelo";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmEdicionVuelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelosActivos)).EndInit();
             this.pnlConfirmacionFinalizar.ResumeLayout(false);
@@ -323,5 +331,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSalioOk;
         private System.Windows.Forms.Label lblIndiceVacio;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

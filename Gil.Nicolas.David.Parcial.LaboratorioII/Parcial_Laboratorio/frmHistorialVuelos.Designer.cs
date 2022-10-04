@@ -52,6 +52,7 @@
             this.aeronaveMatriculaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vueloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblVuelosTerminados = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialVuelos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vueloBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -165,6 +166,7 @@
             this.btn_cerrar.Size = new System.Drawing.Size(171, 64);
             this.btn_cerrar.TabIndex = 13;
             this.btn_cerrar.Text = "CERRAR";
+            this.toolTip1.SetToolTip(this.btn_cerrar, "Volver al menu principal");
             this.btn_cerrar.UseVisualStyleBackColor = false;
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
@@ -283,6 +285,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BackgroundImage = global::Parcial_Laboratorio.Properties.Resources._06;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 626);
             this.ControlBox = false;
             this.Controls.Add(this.lblVuelosTerminados);
@@ -297,7 +302,7 @@
             this.Controls.Add(this.lblNombreUsuarioTittle);
             this.Controls.Add(this.btn_cerrar);
             this.Name = "frmHistorialVuelos";
-            this.Text = "frmHistorialVuelos";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmHistorialVuelos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialVuelos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vueloBindingSource)).EndInit();
@@ -332,5 +337,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn aeronaveMatriculaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioVueloDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource vueloBindingSource;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

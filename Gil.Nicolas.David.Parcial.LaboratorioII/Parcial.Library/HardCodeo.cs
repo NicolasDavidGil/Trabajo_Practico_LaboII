@@ -19,14 +19,7 @@ namespace Parcial.Library
             Aerolinea.Usuarios.Add(5, new Usuario("Nacho_UTN", "12345", "Ignacio Smirlian", 40055065, 21, "Administrador", 150000));
             Aerolinea.Usuarios.Add(1, new Usuario("Raffi_12", "12345", "Raffi Kocak", 35326125, 31, "Administrador", 150000));
         }
-
-        //public static void InicializarClasesVuelo()
-        //{
-            
-        //    //Aerolinea.clasesVuelo.Add("Turista");
-        //    //Aerolinea.clasesVuelo.Add("Primera");
-        //}
-
+       
         public static void InicializarAeronaves()
         {
             Aerolinea.misAviones.Add(new Aeronave("AA747-8I", 467, 3, 5000, false, true, 0, 374, 93, true));
@@ -349,6 +342,21 @@ namespace Parcial.Library
             Aerolinea.vuelosActivos[1].Ganancia = Vuelo.GananciasVuelo(Aerolinea.vuelosActivos[1].ListaPasajero);
             Aerolinea.vuelosActivos[2].Ganancia = Vuelo.GananciasVuelo(Aerolinea.vuelosActivos[2].ListaPasajero);
             Aerolinea.vuelosActivos[3].Ganancia = Vuelo.GananciasVuelo(Aerolinea.vuelosActivos[3].ListaPasajero);
+
+            for(int i= 0; i < Aerolinea.vuelosActivos.Count; i++)
+            {
+                for(int j = 0; j < Aerolinea.vuelosActivos[i].ListaPasajero.Count; j++)
+                {
+                    foreach (Cliente client in Aerolinea.clienteHistorial)
+                    {
+                        if (Aerolinea.vuelosActivos[i].ListaPasajero[j].ClienteDocumento == client.DocumentoPersona)
+                        {
+                            client.RealizarCalculos(Aerolinea.vuelosActivos[i].ListaPasajero[j].PrecioVuelo);
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         public static void InicializarDatos()

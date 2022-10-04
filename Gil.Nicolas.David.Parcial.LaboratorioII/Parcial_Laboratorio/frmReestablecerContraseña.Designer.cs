@@ -134,6 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Parcial_Laboratorio.Properties.Resources._01;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(384, 450);
             this.ControlBox = false;
@@ -146,7 +147,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblPregunta);
             this.Name = "frmReestablecerContraseña";
-            this.Text = "frmReestablecerContraseña";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmReestablecerContraseña_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

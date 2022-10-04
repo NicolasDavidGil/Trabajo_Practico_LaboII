@@ -120,6 +120,7 @@
             this.btnIngresar.Size = new System.Drawing.Size(91, 33);
             this.btnIngresar.TabIndex = 6;
             this.btnIngresar.Text = "INGRESAR";
+            this.toolTip1.SetToolTip(this.btnIngresar, "Confirma usuario y contraseña");
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
@@ -135,6 +136,7 @@
             this.btnSalir.Size = new System.Drawing.Size(86, 33);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "SALIR";
+            this.toolTip1.SetToolTip(this.btnSalir, "Cerrar el programa");
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -166,6 +168,7 @@
             this.btnCambiarContraseña.Size = new System.Drawing.Size(195, 28);
             this.btnCambiarContraseña.TabIndex = 9;
             this.btnCambiarContraseña.Text = "¿Olvido su contraseña?";
+            this.toolTip1.SetToolTip(this.btnCambiarContraseña, "Averiguar contraseña");
             this.btnCambiarContraseña.UseVisualStyleBackColor = false;
             this.btnCambiarContraseña.Click += new System.EventHandler(this.btnCambiarContraseña_Click);
             // 
@@ -200,8 +203,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Parcial_Laboratorio.Properties.Resources._01;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(397, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.btnCambiarContraseña);
@@ -215,7 +220,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
             this.Name = "frmInicio";
-            this.Text = "Form1";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmInicio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

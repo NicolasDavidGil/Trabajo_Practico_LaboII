@@ -71,6 +71,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(12, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 17);
@@ -82,6 +83,7 @@
             this.lbl_horaPartida.AutoSize = true;
             this.lbl_horaPartida.BackColor = System.Drawing.Color.Transparent;
             this.lbl_horaPartida.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_horaPartida.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl_horaPartida.Location = new System.Drawing.Point(16, 162);
             this.lbl_horaPartida.Name = "lbl_horaPartida";
             this.lbl_horaPartida.Size = new System.Drawing.Size(146, 17);
@@ -105,6 +107,7 @@
             this.btnCrearVuelo.FlatAppearance.BorderSize = 3;
             this.btnCrearVuelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearVuelo.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCrearVuelo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCrearVuelo.Location = new System.Drawing.Point(189, 290);
             this.btnCrearVuelo.Name = "btnCrearVuelo";
             this.btnCrearVuelo.Size = new System.Drawing.Size(94, 55);
@@ -121,6 +124,7 @@
             this.btnVolver.FlatAppearance.BorderSize = 3;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnVolver.Location = new System.Drawing.Point(46, 289);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(94, 56);
@@ -135,6 +139,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(12, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 17);
@@ -146,6 +151,7 @@
             this.lbl_destino.AutoSize = true;
             this.lbl_destino.BackColor = System.Drawing.Color.Transparent;
             this.lbl_destino.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_destino.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl_destino.Location = new System.Drawing.Point(67, 88);
             this.lbl_destino.Name = "lbl_destino";
             this.lbl_destino.Size = new System.Drawing.Size(77, 17);
@@ -157,6 +163,7 @@
             this.lbl_origen.AutoSize = true;
             this.lbl_origen.BackColor = System.Drawing.Color.Transparent;
             this.lbl_origen.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_origen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl_origen.Location = new System.Drawing.Point(72, 50);
             this.lbl_origen.Name = "lbl_origen";
             this.lbl_origen.Size = new System.Drawing.Size(68, 17);
@@ -198,6 +205,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Parcial_Laboratorio.Properties.Resources._10;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(356, 450);
             this.ControlBox = false;
             this.Controls.Add(this.lblCamposVacios);
@@ -214,7 +223,7 @@
             this.Controls.Add(this.cobDestino);
             this.Controls.Add(this.cobOrigen);
             this.Name = "frmNuevoVuelo";
-            this.Text = "frmNuevoVuelo";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmNuevoVuelo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

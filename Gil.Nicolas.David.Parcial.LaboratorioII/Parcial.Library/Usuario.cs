@@ -59,9 +59,8 @@ namespace Parcial.Library
         }
 
         public override void RealizarCalculos(float valor)
-        {
-            this.Comision = valor * 0.20f;
-            this.Sueldo += this.Comision;
+        {            
+            this.Sueldo += valor * 0.20f;
         }
     }
 }

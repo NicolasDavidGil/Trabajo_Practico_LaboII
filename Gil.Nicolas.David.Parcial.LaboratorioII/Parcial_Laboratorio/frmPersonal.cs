@@ -95,7 +95,7 @@ namespace Parcial_Laboratorio
                 if (i.Value.NombrePersona == cobVendedores.Text)
                 {
                     lblClienteElegido.Refresh();
-                    lblClienteElegido.Text = Aerolinea.Usuarios[i.Key].ToString();
+                    lblClienteElegido.Text = i.Value.ToString();
                     AsignarImagen(i.Key);
                     index = i.Key;
                 }

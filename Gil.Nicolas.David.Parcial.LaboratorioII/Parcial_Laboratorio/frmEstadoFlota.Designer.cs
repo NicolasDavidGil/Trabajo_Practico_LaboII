@@ -43,6 +43,7 @@
             this.aeronaveBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblAvionElegido = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAviones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeronaveBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -184,6 +185,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(102, 35);
             this.btnCerrar.TabIndex = 20;
             this.btnCerrar.Text = "CERRAR";
+            this.toolTip1.SetToolTip(this.btnCerrar, "Volver al menu principal");
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -192,16 +194,17 @@
             this.lblAvionElegido.AutoSize = true;
             this.lblAvionElegido.BackColor = System.Drawing.Color.Transparent;
             this.lblAvionElegido.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAvionElegido.Location = new System.Drawing.Point(188, 164);
+            this.lblAvionElegido.Location = new System.Drawing.Point(164, 164);
             this.lblAvionElegido.Name = "lblAvionElegido";
-            this.lblAvionElegido.Size = new System.Drawing.Size(59, 20);
+            this.lblAvionElegido.Size = new System.Drawing.Size(12, 20);
             this.lblAvionElegido.TabIndex = 21;
-            this.lblAvionElegido.Text = "avion";
+            this.lblAvionElegido.Text = " ";
             // 
             // frmEstadoFlota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Parcial_Laboratorio.Properties.Resources._08;
             this.ClientSize = new System.Drawing.Size(479, 450);
             this.ControlBox = false;
             this.Controls.Add(this.lblAvionElegido);
@@ -243,5 +246,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn estadoAvionDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn matriculaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblAvionElegido;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

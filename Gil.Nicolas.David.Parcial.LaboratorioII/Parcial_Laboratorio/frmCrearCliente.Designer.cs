@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cobEstadoCivil = new System.Windows.Forms.ComboBox();
@@ -49,6 +50,7 @@
             this.txtCiudad = new System.Windows.Forms.TextBox();
             this.txtLocalidad = new System.Windows.Forms.TextBox();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -216,6 +218,7 @@
             this.btnCrearCliente.Size = new System.Drawing.Size(127, 80);
             this.btnCrearCliente.TabIndex = 26;
             this.btnCrearCliente.Text = "AGREGAR NUEVO CLIENTE";
+            this.toolTip1.SetToolTip(this.btnCrearCliente, "Creacion de un nuevo cliente");
             this.btnCrearCliente.UseVisualStyleBackColor = false;
             this.btnCrearCliente.Click += new System.EventHandler(this.btnCrearCliente_Click);
             // 
@@ -232,6 +235,7 @@
             this.btnVolver.Size = new System.Drawing.Size(127, 80);
             this.btnVolver.TabIndex = 25;
             this.btnVolver.Text = "VOLVER SIN GUARDAR";
+            this.toolTip1.SetToolTip(this.btnVolver, "Volver al menu principal");
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -274,6 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Parcial_Laboratorio.Properties.Resources._11;
             this.ClientSize = new System.Drawing.Size(380, 528);
             this.ControlBox = false;
             this.Controls.Add(this.txtNacionalidad);
@@ -298,7 +303,7 @@
             this.Controls.Add(this.btnCrearCliente);
             this.Controls.Add(this.btnVolver);
             this.Name = "frmCrearCliente";
-            this.Text = "frmCrearCliente";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmCrearCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -328,5 +333,6 @@
         private System.Windows.Forms.TextBox txtCiudad;
         private System.Windows.Forms.TextBox txtLocalidad;
         private System.Windows.Forms.TextBox txtNacionalidad;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

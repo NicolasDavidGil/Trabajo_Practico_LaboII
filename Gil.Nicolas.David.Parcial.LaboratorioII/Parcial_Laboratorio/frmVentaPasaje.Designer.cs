@@ -65,10 +65,10 @@
             this.btnContinuar.FlatAppearance.BorderSize = 3;
             this.btnContinuar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinuar.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnContinuar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnContinuar.ForeColor = System.Drawing.Color.Black;
             this.btnContinuar.Location = new System.Drawing.Point(253, 400);
             this.btnContinuar.Name = "btnContinuar";
-            this.btnContinuar.Size = new System.Drawing.Size(86, 45);
+            this.btnContinuar.Size = new System.Drawing.Size(107, 39);
             this.btnContinuar.TabIndex = 1;
             this.btnContinuar.Text = "CONTINUAR";
             this.toolTip1.SetToolTip(this.btnContinuar, "Continuar con la venta");
@@ -81,10 +81,10 @@
             this.btnCancelarVenta.FlatAppearance.BorderSize = 3;
             this.btnCancelarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarVenta.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelarVenta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancelarVenta.ForeColor = System.Drawing.Color.Black;
             this.btnCancelarVenta.Location = new System.Drawing.Point(88, 400);
             this.btnCancelarVenta.Name = "btnCancelarVenta";
-            this.btnCancelarVenta.Size = new System.Drawing.Size(75, 45);
+            this.btnCancelarVenta.Size = new System.Drawing.Size(96, 39);
             this.btnCancelarVenta.TabIndex = 2;
             this.btnCancelarVenta.Text = "CANCELAR VENTA";
             this.toolTip1.SetToolTip(this.btnCancelarVenta, "Volver al menu principal");
@@ -96,7 +96,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(25, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(440, 23);
@@ -107,7 +107,7 @@
             // 
             this.cobPesoTotal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cobPesoTotal.FormattingEnabled = true;
-            this.cobPesoTotal.Location = new System.Drawing.Point(151, 342);
+            this.cobPesoTotal.Location = new System.Drawing.Point(159, 339);
             this.cobPesoTotal.Name = "cobPesoTotal";
             this.cobPesoTotal.Size = new System.Drawing.Size(121, 23);
             this.cobPesoTotal.TabIndex = 39;
@@ -119,7 +119,7 @@
             this.lbl_pesoTotal.AutoSize = true;
             this.lbl_pesoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lbl_pesoTotal.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_pesoTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_pesoTotal.ForeColor = System.Drawing.Color.Black;
             this.lbl_pesoTotal.Location = new System.Drawing.Point(62, 345);
             this.lbl_pesoTotal.Name = "lbl_pesoTotal";
             this.lbl_pesoTotal.Size = new System.Drawing.Size(91, 17);
@@ -128,7 +128,7 @@
             // 
             // numudCantidadMaletas
             // 
-            this.numudCantidadMaletas.Location = new System.Drawing.Point(151, 302);
+            this.numudCantidadMaletas.Location = new System.Drawing.Point(161, 298);
             this.numudCantidadMaletas.Name = "numudCantidadMaletas";
             this.numudCantidadMaletas.Size = new System.Drawing.Size(55, 23);
             this.numudCantidadMaletas.TabIndex = 37;
@@ -139,7 +139,7 @@
             // 
             this.cobClasePasajero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cobClasePasajero.FormattingEnabled = true;
-            this.cobClasePasajero.Location = new System.Drawing.Point(151, 205);
+            this.cobClasePasajero.Location = new System.Drawing.Point(161, 205);
             this.cobClasePasajero.Name = "cobClasePasajero";
             this.cobClasePasajero.Size = new System.Drawing.Size(121, 23);
             this.cobClasePasajero.TabIndex = 36;
@@ -149,7 +149,7 @@
             // chkEquipajeMano
             // 
             this.chkEquipajeMano.AutoSize = true;
-            this.chkEquipajeMano.Location = new System.Drawing.Point(148, 258);
+            this.chkEquipajeMano.Location = new System.Drawing.Point(161, 258);
             this.chkEquipajeMano.Name = "chkEquipajeMano";
             this.chkEquipajeMano.Size = new System.Drawing.Size(15, 14);
             this.chkEquipajeMano.TabIndex = 35;
@@ -160,7 +160,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(25, 304);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 17);
@@ -172,7 +172,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(49, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 17);
@@ -184,7 +184,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(34, 258);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 17);
@@ -196,8 +196,8 @@
             this.lblPasajeroElegido.AutoSize = true;
             this.lblPasajeroElegido.BackColor = System.Drawing.Color.Transparent;
             this.lblPasajeroElegido.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPasajeroElegido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPasajeroElegido.Location = new System.Drawing.Point(311, 205);
+            this.lblPasajeroElegido.ForeColor = System.Drawing.Color.Black;
+            this.lblPasajeroElegido.Location = new System.Drawing.Point(288, 213);
             this.lblPasajeroElegido.Name = "lblPasajeroElegido";
             this.lblPasajeroElegido.Size = new System.Drawing.Size(72, 17);
             this.lblPasajeroElegido.TabIndex = 40;
@@ -216,6 +216,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Parcial_Laboratorio.Properties.Resources._06;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(487, 479);
             this.ControlBox = false;
             this.Controls.Add(this.lblError);
@@ -233,7 +235,7 @@
             this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.dgvVuelosDisponibles);
             this.Name = "frmVentaPasaje";
-            this.Text = "frmVentaPasaje";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmVentaPasaje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelosDisponibles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numudCantidadMaletas)).EndInit();

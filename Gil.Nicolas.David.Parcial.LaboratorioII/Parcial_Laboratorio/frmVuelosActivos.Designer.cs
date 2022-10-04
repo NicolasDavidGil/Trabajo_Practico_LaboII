@@ -66,55 +66,55 @@
             // 
             this.lblPesoTotal.AutoSize = true;
             this.lblPesoTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblPesoTotal.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPesoTotal.ForeColor = System.Drawing.Color.Black;
-            this.lblPesoTotal.Location = new System.Drawing.Point(798, 149);
+            this.lblPesoTotal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPesoTotal.ForeColor = System.Drawing.Color.White;
+            this.lblPesoTotal.Location = new System.Drawing.Point(892, 176);
             this.lblPesoTotal.Name = "lblPesoTotal";
-            this.lblPesoTotal.Size = new System.Drawing.Size(0, 17);
+            this.lblPesoTotal.Size = new System.Drawing.Size(0, 16);
             this.lblPesoTotal.TabIndex = 49;
             // 
             // lblTotalMaletas
             // 
             this.lblTotalMaletas.AutoSize = true;
             this.lblTotalMaletas.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalMaletas.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTotalMaletas.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalMaletas.Location = new System.Drawing.Point(798, 113);
+            this.lblTotalMaletas.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalMaletas.ForeColor = System.Drawing.Color.White;
+            this.lblTotalMaletas.Location = new System.Drawing.Point(892, 140);
             this.lblTotalMaletas.Name = "lblTotalMaletas";
-            this.lblTotalMaletas.Size = new System.Drawing.Size(0, 17);
+            this.lblTotalMaletas.Size = new System.Drawing.Size(0, 16);
             this.lblTotalMaletas.TabIndex = 48;
             // 
             // lblPasajerosTurista
             // 
             this.lblPasajerosTurista.AutoSize = true;
             this.lblPasajerosTurista.BackColor = System.Drawing.Color.Transparent;
-            this.lblPasajerosTurista.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPasajerosTurista.ForeColor = System.Drawing.Color.Black;
-            this.lblPasajerosTurista.Location = new System.Drawing.Point(492, 184);
+            this.lblPasajerosTurista.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPasajerosTurista.ForeColor = System.Drawing.Color.White;
+            this.lblPasajerosTurista.Location = new System.Drawing.Point(586, 211);
             this.lblPasajerosTurista.Name = "lblPasajerosTurista";
-            this.lblPasajerosTurista.Size = new System.Drawing.Size(0, 17);
+            this.lblPasajerosTurista.Size = new System.Drawing.Size(0, 16);
             this.lblPasajerosTurista.TabIndex = 47;
             // 
             // lblTotalPasajeros
             // 
             this.lblTotalPasajeros.AutoSize = true;
             this.lblTotalPasajeros.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalPasajeros.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTotalPasajeros.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalPasajeros.Location = new System.Drawing.Point(492, 113);
+            this.lblTotalPasajeros.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalPasajeros.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPasajeros.Location = new System.Drawing.Point(586, 140);
             this.lblTotalPasajeros.Name = "lblTotalPasajeros";
-            this.lblTotalPasajeros.Size = new System.Drawing.Size(0, 17);
+            this.lblTotalPasajeros.Size = new System.Drawing.Size(0, 16);
             this.lblTotalPasajeros.TabIndex = 46;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(609, 151);
+            this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(703, 178);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(175, 17);
+            this.label10.Size = new System.Drawing.Size(156, 16);
             this.label10.TabIndex = 44;
             this.label10.Text = "PESO TOTAL EN CARGA:";
             // 
@@ -122,11 +122,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(533, 113);
+            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(627, 140);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(241, 17);
+            this.label9.Size = new System.Drawing.Size(216, 16);
             this.label9.TabIndex = 43;
             this.label9.Text = "CANTIDAD MALETAS EN BODEGA:";
             // 
@@ -134,11 +134,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(286, 184);
+            this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(380, 211);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(183, 17);
+            this.label8.Size = new System.Drawing.Size(164, 16);
             this.label8.TabIndex = 42;
             this.label8.Text = "PASAJEROS EN TURISTA:";
             // 
@@ -146,11 +146,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(285, 144);
+            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(379, 171);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(184, 17);
+            this.label7.Size = new System.Drawing.Size(169, 16);
             this.label7.TabIndex = 41;
             this.label7.Text = "PASAJEROS EN PRIMERA:";
             // 
@@ -158,11 +158,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(254, 113);
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(348, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(215, 17);
+            this.label6.Size = new System.Drawing.Size(193, 16);
             this.label6.TabIndex = 40;
             this.label6.Text = "TOTAL PASAJEROS A BORDO:";
             // 
@@ -186,7 +186,7 @@
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cerrar.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_cerrar.ForeColor = System.Drawing.Color.Black;
-            this.btn_cerrar.Location = new System.Drawing.Point(917, 104);
+            this.btn_cerrar.Location = new System.Drawing.Point(917, 26);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(131, 74);
             this.btn_cerrar.TabIndex = 33;
@@ -199,11 +199,11 @@
             // 
             this.lblPasajerosPrimera.AutoSize = true;
             this.lblPasajerosPrimera.BackColor = System.Drawing.Color.Transparent;
-            this.lblPasajerosPrimera.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPasajerosPrimera.ForeColor = System.Drawing.Color.Black;
-            this.lblPasajerosPrimera.Location = new System.Drawing.Point(492, 144);
+            this.lblPasajerosPrimera.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPasajerosPrimera.ForeColor = System.Drawing.Color.White;
+            this.lblPasajerosPrimera.Location = new System.Drawing.Point(586, 171);
             this.lblPasajerosPrimera.Name = "lblPasajerosPrimera";
-            this.lblPasajerosPrimera.Size = new System.Drawing.Size(0, 17);
+            this.lblPasajerosPrimera.Size = new System.Drawing.Size(0, 16);
             this.lblPasajerosPrimera.TabIndex = 27;
             // 
             // cobVuelosActivos
@@ -242,7 +242,7 @@
             this.equipajeBodegaDataGridViewTextBoxColumn,
             this.precioVueloDataGridViewTextBoxColumn});
             this.dgvPasajeros.DataSource = this.pasajeroBindingSource;
-            this.dgvPasajeros.Location = new System.Drawing.Point(96, 284);
+            this.dgvPasajeros.Location = new System.Drawing.Point(81, 330);
             this.dgvPasajeros.Name = "dgvPasajeros";
             this.dgvPasajeros.RowTemplate.Height = 25;
             this.dgvPasajeros.Size = new System.Drawing.Size(847, 281);
@@ -324,22 +324,22 @@
             // 
             this.lblCapacidadLibreBodega.AutoSize = true;
             this.lblCapacidadLibreBodega.BackColor = System.Drawing.Color.Transparent;
-            this.lblCapacidadLibreBodega.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCapacidadLibreBodega.ForeColor = System.Drawing.Color.Black;
-            this.lblCapacidadLibreBodega.Location = new System.Drawing.Point(798, 183);
+            this.lblCapacidadLibreBodega.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCapacidadLibreBodega.ForeColor = System.Drawing.Color.White;
+            this.lblCapacidadLibreBodega.Location = new System.Drawing.Point(892, 210);
             this.lblCapacidadLibreBodega.Name = "lblCapacidadLibreBodega";
-            this.lblCapacidadLibreBodega.Size = new System.Drawing.Size(0, 17);
+            this.lblCapacidadLibreBodega.Size = new System.Drawing.Size(0, 16);
             this.lblCapacidadLibreBodega.TabIndex = 60;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(554, 183);
+            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(648, 210);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(227, 17);
+            this.label17.Size = new System.Drawing.Size(203, 16);
             this.label17.TabIndex = 59;
             this.label17.Text = "CAPACIDAD LIBRE EN BODEGA:";
             // 
@@ -347,17 +347,18 @@
             // 
             this.lblVueloELegido.AutoSize = true;
             this.lblVueloELegido.BackColor = System.Drawing.Color.Transparent;
-            this.lblVueloELegido.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblVueloELegido.ForeColor = System.Drawing.Color.Black;
-            this.lblVueloELegido.Location = new System.Drawing.Point(96, 60);
+            this.lblVueloELegido.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblVueloELegido.ForeColor = System.Drawing.Color.White;
+            this.lblVueloELegido.Location = new System.Drawing.Point(81, 70);
             this.lblVueloELegido.Name = "lblVueloELegido";
-            this.lblVueloELegido.Size = new System.Drawing.Size(0, 17);
+            this.lblVueloELegido.Size = new System.Drawing.Size(0, 16);
             this.lblVueloELegido.TabIndex = 61;
             // 
             // frmVuelosActivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Parcial_Laboratorio.Properties.Resources._111;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1060, 623);
             this.ControlBox = false;
@@ -381,7 +382,7 @@
             this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.lblPasajerosPrimera);
             this.Name = "frmVuelosActivos";
-            this.Text = "frmVuelosActivos";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmVuelosActivos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajeros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).EndInit();

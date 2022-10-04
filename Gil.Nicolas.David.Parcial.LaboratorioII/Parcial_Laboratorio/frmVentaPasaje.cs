@@ -105,7 +105,7 @@ namespace Parcial_Laboratorio
             float precio = Pasajero.CalcularPrecioVuelo(destino, duracion, cobClasePasajero.Text); 
 
             if (!String.IsNullOrEmpty(cobClasePasajero.Text) && !String.IsNullOrEmpty(cobPesoTotal.Text))
-            {               
+            {                
                 Pasajero auxPasajero;
 
                 auxPasajero = new Pasajero(cobClasePasajero.Text, float.Parse(cobPesoTotal.Text),
@@ -114,9 +114,15 @@ namespace Parcial_Laboratorio
                                             precio);
                 if (auxPasajero != null)
                 {
+                    foreach(KeyValuePair<int, Usuario> vendedor in Aerolinea.Usuarios)
+                    {
+                        if(vendedor.Value.DocumentoPersona == Aerolinea.vendedorActivo.DocumentoPersona)
+                        {
+                            vendedor.Value.RealizarCalculos(precio);
+                        }
+                    }
                     Aerolinea.vuelosActivos[index].ListaPasajero.Add(auxPasajero);
                     Aerolinea.clienteHistorial[indexCliente].CantidadVuelos++;
-                    Aerolinea.vendedorActivo.RealizarCalculos(precio);
                     Aerolinea.clienteHistorial[indexCliente].RealizarCalculos(precio);
                     if (cobClasePasajero.Text == "Primera")
                     {
@@ -128,7 +134,7 @@ namespace Parcial_Laboratorio
                     }
 
                     DialogResult = DialogResult.OK;
-                }                               
+                }                                    
             }else
             {
                 lblError.Text = "Se deben completar todos los campos";
@@ -153,7 +159,6 @@ namespace Parcial_Laboratorio
                 }
             }
         }  
-
         private void btnCancelarVenta_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
