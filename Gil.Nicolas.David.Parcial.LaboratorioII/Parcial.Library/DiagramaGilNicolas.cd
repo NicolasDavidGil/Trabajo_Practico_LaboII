@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Parcial.Library.Aerolinea" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEQAAAAAAAAAAACAAAAAAAAAAAAAIAAgAAIgA=</HashCode>
+      <FileName>Aerolinea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parcial.Library.Cliente" Collapsed="true">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAIAEEgCABECwAABAoAIAAEAAAAAQAAgA=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parcial.Library.Aeronave" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQAAAAMAAAAAAEgABAAIACwBADAAAAEgAkABACAAA=</HashCode>
+      <FileName>Aeronave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parcial.Library.HardCodeo" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAACGAAAAAAAIAAAAAIAAAAQAAAA=</HashCode>
+      <FileName>HardCodeo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parcial.Library.Pasajero" Collapsed="true">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABAACAABAAiMQAAAgAAAAAAAAIAGIAAAEAEAAAA=</HashCode>
+      <FileName>Pasajero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parcial.Library.Persona" Collapsed="true">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAgACAAAAAAAAAAAAAAACAAAEAAAAgAAAAI=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parcial.Library.Usuario" Collapsed="true">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAACAAAAAAEAAAAAgAAAEAAAABAEAgARAAIAAQ=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parcial.Library.Validador" Collapsed="true">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAKAABAAAAAAAAAAAAAAAAIEAAAAAIA=</HashCode>
+      <FileName>Validador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Parcial.Library.Vuelo" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBGBEAQQAAAMAEAEQBGAgAAAkhAAAWIQAQlgAAAAg=</HashCode>
+      <FileName>Vuelo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Parcial.Library.EClaseVuelo" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pasajero.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
