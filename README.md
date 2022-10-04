@@ -5,7 +5,8 @@ Resumen:
 
 La aplicación se desarrolla pensando en ser usada por los empleados de una aerolinea,a traves de un inicio de sesion con usuario y contraseña propio acceden a un "menu principal", desde el cual pueden desarrollar todas las cosas pedidas en las consignas. -Ver estado de vuelos. -Ver datos de los clientes. -Ver datos de vuelos y pasajeros. -Ver datos de las aviones. -Consultar estadisticas historicas. Al iniciarse la aplicacion se inicializa una cantidad de datos por defectos que puede ser usados para pruebas. A todo esto se puede acceder desde un menustrip. Para resulver el problema del uso en tiempo real se establecio como criterio que cada avión de la flota solo podrá volar 1 vez por dia.
 
-Diagrama de clases:Gil Nicolas David DiagramaDeClase
+Diagrama de clases:![Gil Nicolas David DiagramaDeClase](https://user-images.githubusercontent.com/86857153/193868015-38111976-dabd-4ce5-ac34-510a3d22d983.png)
+
 
 Clase a clase:
 
