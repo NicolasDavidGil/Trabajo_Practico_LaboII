@@ -1,0 +1,51 @@
+DETALLES DEL MAZO: contiene 108 cartas.
+19 cartas azules, un 0, dos desde el 1 al 9 y dos +2 del color.
+19 cartas rojas, un 0, dos desde el 1 al 9 y dos +2 del color.
+19 cartas verdes, un 0, dos desde el 1 al 9 y dos +2 del color.
+19 cartas amarillas, un 0, dos desde el 1 al 9 y dos +2 del color.
+8 cartas de girar ronda.
+8 cartas de perder turno.
+4 comodines cambia color.
+4 comodines cambia color +4.
+
+TIPOS DE PARTIDAS: 
+
+Hay dos tipos de partidas disponibles, la partida normal donde el objetivo es quedarse sin cartas en la mano, y gana el jugador que primero lo consiga. 
+O la partida corta, donde se jugaran 10 manos y ganara el jugador con menos cartas en la mano en ese punto.
+
+HORA DE JUGAR:
+
+La primer carta en mesa sera puesta desde el mazo por el repartidor despues de terminar de dar las correspondientes cartas a los jugadores.
+En su turno cada jugador podra realizar dos acciones:
+
+-Jugar una carta de su mano que coindida con el color, número o símbolo de la carta en mesa y colocarla encima de la misma. Por ejemplo, si dicha carta es un 7 rojo,
+el jugador puede colocar una carta roja, un 7 de cualquier color o un comodin.
+
+CARTAS ESPECIALES:
+
++2 o TOMA DOS: cuando se coloca esta carta, el siguiente jugador debera agregar dos cartas a su mano y perdera el turno de juego.
+Esta carta solo puede jugarse sobre cartas del mismo color o sobre otra carta Toma Dos.
+
+GIRAR RONDA: esta carta cambia el sentido de la ronda, si la ronda avanzaba a la derecha, sera el turno del de la izquierda y viceversa.
+Esta carta solo puede jugarse sobre cartas del mismo color o sobre otra carta Girar Ronda.
+
+PERDER TURNO: esta carta prohibe jugar al jugador con el turno siguiente, en caso de salir en la primer carta, el jugador que es mano pierde el turno.
+Esta carta solo puede jugarse sobre cartas del mismo color o sobre otra carta Perder Turno.
+
+COMODÍN CAMBIA COLOR: esta carta permite al jugador que la haya jugado elegir un color, distinto o el mismo, el cual sera el asignado para seguir jugando.
+Esta carta puede jugarse sobre cualquier otra y en caso de ser la primera, el jugador mano elige el color antes de tirar.
+
+COMODÍN CAMBIA COLOR MAS CUATRO o +4: el que juega esta carta elige el color a jugar igual que en el anterior caso, pero aqui el jugador siguiente en la ronda debera
+levantar cuatro cartas y perdera su turno de juego.
+La trampa es que esta carta solo puede jugarse cuando ninguna otra carta es posible.
+
+ATENCION: Tanto para las cartas +4 y +2 NO se aplica efecto de acumulación, el jugador que reciba una de esta debera levantar y perder el turno independientemente de que
+tenga una carta igual o no.
+
+IMPORTANTE: cuando un jugador tiene dos cartas en la mano yal jugar se queda con una sola, debe avisarlo en voz alta diciendo ¡¡UNO!!, en caso contrario debera levantar dos cartas.
+
+				UTN UNO MASTERS.Marca registrada
+		2022 UTN UNO MASTERS. All Rights Reserved. UTN UNO MASTERS and associated trademarks
+			   and trade dress are owned by UTN UNO MASTERS.
+
+
