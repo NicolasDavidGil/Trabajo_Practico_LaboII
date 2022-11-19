@@ -34,9 +34,8 @@ namespace Vista.Vistas
         private void frmMain_Load(object sender, EventArgs e)
         {            
             mainPresenter.LlenarDatos();
-            mainPresenter.EscribirEnChat("Atentos todos, " + PresentadorLogin.logeado?.NombreUsuario + " acaba de llegar!! \n Demosle una cálida bienvenida!!");
-            mainPresenter.CrearArchivoHistorial();
-            mainPresenter.CrearArchivoUsuarios();
+            mainPresenter.EscribirEnChat("Atentos todos, " + GameManager.managerOn?.NombreUsuario + " acaba de llegar!! \n Demosle una cálida bienvenida!!");
+            SetMatchInDataGrid();
         }                       
 
         public string Chat { get => rtbChat.Text; set => rtbChat.Text = value; }
@@ -54,11 +53,16 @@ namespace Vista.Vistas
             {
                 if (instance.WindowState == FormWindowState.Minimized)
                     instance.WindowState = FormWindowState.Normal;
-                instance.BringToFront();
+                instance.BringToFront();                
             }
+            instance.SetMatchInDataGrid();
             return instance;
         }        
-
+        public void SetMatchInDataGrid()
+        {
+            dgvPartidasEnJuego.DataSource = null;
+            dgvPartidasEnJuego.DataSource = GameManager.misActivas;            
+        }
         public void SetListInDataGrid(List<Usuario> miLista)
         {
             this.dgvJugadoresOnline.Rows.Clear();
@@ -137,14 +141,9 @@ namespace Vista.Vistas
                 this.dgvJugadoresOnline.Rows.Add(rows);
             }
         }
-        public void SetChat()
+        public void SetChat(string mensaje)
         {
-            throw new NotImplementedException();
-        }
-
-        public void SetPlayerNames()
-        {
-            throw new NotImplementedException();
+            rtbChat.Text += mensaje;
         }
 
         public void AsignarImagenNacion(string nacion)
@@ -238,14 +237,25 @@ namespace Vista.Vistas
             }
         }
 
-        private void btnObservar_Click(object sender, EventArgs e)
+        private async void btnObservar_Click(object sender, EventArgs e)
         {
-            //list<Task> tast[indexPartida]
+            await Devolver();            
+        }
+
+        private async Task Devolver()
+        {
+        //    frmCrearPartida.misTareas?[indexPartida].Start();
         }
 
         private void dgvPartidasEnJuego_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if(e.RowIndex > -1)
             indexPartida = e.RowIndex;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

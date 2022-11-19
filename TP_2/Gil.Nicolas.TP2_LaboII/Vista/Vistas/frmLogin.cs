@@ -18,7 +18,6 @@ namespace Vista.Vistas
     {
         frmCargando load;
         PresentadorLogin loginAdmin;        
-        RepositorioUsuarios usuarioRepo = new RepositorioUsuarios();
 
         public frmLogin()
         {

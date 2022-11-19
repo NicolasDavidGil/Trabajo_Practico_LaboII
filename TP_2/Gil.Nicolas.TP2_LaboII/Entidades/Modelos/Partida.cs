@@ -1,4 +1,5 @@
-﻿using Entidades.Repositorios;
+﻿using Entidades.Presentadores;
+using Entidades.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -22,9 +23,11 @@ namespace Entidades.Modelos
         private int turnoJuego;
         private bool juegocarta;
         private bool primeraMano;
+        private string tipoPartida;
+        private int cantidadManos;
         readonly RepositorioMazo nuevoMazo;
 
-        public Partida(DateTime fechaPartida, Usuario jug1, Usuario jug2)
+        public Partida(DateTime fechaPartida, Usuario jug1, Usuario jug2, string tipoPartida)
         {
             this.fechaPartida = fechaPartida;
             this.jugadorUno = jug1;
@@ -37,10 +40,12 @@ namespace Entidades.Modelos
             this.ganador = "vacio";
             this.juegocarta = false;
             this.primeraMano = true;
+            this.cantidadManos = 0;
             nuevoMazo = new RepositorioMazo();
+            this.tipoPartida = tipoPartida;
         }
 
-        public Partida(DateTime fechaPartida, Usuario jugadorUno, Usuario jugadorDos, string ganador) : this(fechaPartida, jugadorUno, jugadorDos)
+        public Partida(DateTime fechaPartida, Usuario jugadorUno, Usuario jugadorDos, string ganador, string partida) : this(fechaPartida, jugadorUno, jugadorDos, partida)
         {
             this.ganador = ganador;
         }
@@ -57,14 +62,29 @@ namespace Entidades.Modelos
         public int TurnoJuego { get => turnoJuego; set => turnoJuego = value; }
         public List<Carta> Mazo { get => mazo; set => mazo = value; }
         public List<Carta> MazoAux { get => mazoAux; set => mazoAux = value; }
-
+        public string TipoPartida { get => tipoPartida; set => tipoPartida = value; }
+        public int CantidadManos { get => cantidadManos; set => cantidadManos = value; }    
 
         public void EmpezarPartida()
         {
             this.turnoJuego = 1;
-            this.mazo = nuevoMazo.GetMazo();
+            this.mazo = GameManager.mazoDeJuego;
             RepartirCartas();
-            this.mazoAux.Add(cartaEnMesa);            
+            this.mazoAux.Add(cartaEnMesa);
+            if (tipoPartida == "Partida Completa")
+            {
+                while (jugadorUno.ManoJugador.Count > 0 || jugadorDos.ManoJugador.Count > 0)
+                {
+                    JugarPartida();
+                }
+            }
+            else
+            {
+                while(cantidadManos < 10)
+                {
+                    JugarPartida();
+                }
+            }
         }
         public void JugarPartida()
         {
@@ -359,7 +379,7 @@ namespace Entidades.Modelos
             Carta aux;
             Random r1 = new();
             int k;
-            k = r1.Next(1, this.mazo.Count);
+            k = r1.Next(0, this.mazo.Count);
             if(this.mazo.Count == 0)
             {
                 mazoAux.ForEach((x) => mazo.Add(x));

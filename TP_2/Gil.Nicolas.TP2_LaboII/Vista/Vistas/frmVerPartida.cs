@@ -21,89 +21,78 @@ namespace Vista.Vistas
     public partial class frmVerPartida : Form, IVerPartida
     {
         public static frmVerPartida? instance;
-        PresentadorPartidaEnCurso admin;
         Image? image;
         Partida miPartida;
+        PresentadorPartidaEnCurso admin;
         DateTime hora = new();
-        public frmVerPartida(Partida partida)
+        public frmVerPartida(Partida match)
         {
             InitializeComponent();
-            miPartida = partida;
-            admin = new(miPartida, this);
+            miPartida = match;
+            admin = new PresentadorPartidaEnCurso(miPartida, this);
         }
         private void frmVerPartida_Load(object sender, EventArgs e)
-        {            
-            AsignarImagenNacion(miPartida.JugadorUno.Nacionalidad);
-            ptbFlagJugadorUno.BackgroundImage = image;
-            AsignarImagenNacion(miPartida.JugadorDos.Nacionalidad);
-            ptbFlagJugadorDos.BackgroundImage = image;            
-            AsignarNombres();
-            admin.IniciarPartida();
+        {
+            AsignarDatos();
         }
 
         public int CantCartasJugadorUno { get => JugadorUno.ManoJugador.Count; }
         public int CantCartasJugadorDos { get => JugadorDos.ManoJugador.Count; }
-        
+        public int CantidadManos { get => miPartida.CantidadManos; set => miPartida.CantidadManos = value; }
         public Usuario JugadorUno { get => miPartida.JugadorUno; set => miPartida.JugadorUno = value; }
         public Usuario JugadorDos { get => miPartida.JugadorDos; set => miPartida.JugadorDos = value; }
         public List<Carta> MazoEnUso { get => miPartida.Mazo; set => miPartida.Mazo = value; }
         public List<Carta> MazoAuxiliar { get => miPartida.MazoAux; set => miPartida.MazoAux = value; }
-        public string Chat { get => rtxChat.Text; set => rtxChat.Text = value; }
+        public string Chat { get => rtxChat.Text; set => rtxChat.Text = value; }        
 
-        public void FinalizarPartida()
-        {
-            admin.FinalizarPartida();
-        }
-
-        public void IniciarPartida()
-        {
-            tmrPartida.Start();            
-        }
-
-        public void AsignarNombres()
+        public void AsignarDatos()
         {           
             btnJugadorUno.Text = miPartida.JugadorUno.NombreUsuario;
             btnJugadorDos.Text = miPartida.JugadorDos.NombreUsuario;
+            AsignarImagenNacion(miPartida.JugadorUno.Nacionalidad);
+            ptbFlagJugadorUno.BackgroundImage = image;
+            AsignarImagenNacion(miPartida.JugadorDos.Nacionalidad);
+            ptbFlagJugadorDos.BackgroundImage = image;
         }
 
         private void tmrPartida_Tick(object sender, EventArgs e)
         {
             hora = hora.AddSeconds(1);
             int horaInt = int.Parse(hora.ToString("ss"));
-            miPartida.EmpezarPartida();
-            if (miPartida.Ganador != "vacio")
-            {                
-                if (horaInt % 4 == 0)
-                {
-                    miPartida.JugarPartida();
-                    MostrarCartaEnMesa(miPartida);
-                    MostrarCartasManos(miPartida);                    
-                }
+            MostrarCartasManos(miPartida);
+            miPartida.JugarPartida();
+
+            if (miPartida.JugadorDos.ManoJugador.Count == 1)
+            {
+                admin.ActualizarChat(miPartida.JugadorDos.NombreUsuario + " dice: ¡¡¡UNOOOO!!!");
             }
             else
             {
-                FinalizarPartida();
-                tmrPartida.Stop();                
+                admin.ActualizarChat(miPartida.JugadorUno.NombreUsuario + " dice: ¡¡¡ME QUEDA UNO!!!");
             }
+            if (miPartida.JugadorUno.ManoJugador.Count == 0)
+            {
+                miPartida.Ganador = miPartida.JugadorUno.NombreUsuario;
+                admin.ActualizarChat("Gano: " + miPartida.Ganador + " y es el amo!!");
+                miPartida.JugadorUno.Puntaje += 100;
+                miPartida.JugadorDos.Puntaje -= 50;
+                tmrPartida.Stop();
+            }
+            if (miPartida.JugadorDos.ManoJugador.Count == 0)
+            {
+                miPartida.Ganador = miPartida.JugadorDos.NombreUsuario;
+                admin.ActualizarChat("Gano: " + miPartida.Ganador + " y es el amo!!");
+                miPartida.JugadorDos.Puntaje += 100;
+                miPartida.JugadorUno.Puntaje -= 50;
+                tmrPartida.Stop();
+            }
+
         }               
 
-        public static frmVerPartida GetInstance(Form padreContenedor)
-        {
-            if (instance == null || instance.IsDisposed)
-            {
-                //instance = new frmVerPartida();
-                instance.MdiParent = padreContenedor;
-                instance.FormBorderStyle = FormBorderStyle.None;
-                instance.Dock = DockStyle.Fill;
-            }
-            else
-            {
-                if (instance.WindowState == FormWindowState.Minimized)
-                    instance.WindowState = FormWindowState.Normal;
-                instance.BringToFront();
-            }
-            return instance;
-        }
+        //public static frmVerPartida GetInstance(Form padreContenedor, Partida match)
+        //{
+            
+        //}
 
         public void AsignarImagenNacion(string nacion)
         {

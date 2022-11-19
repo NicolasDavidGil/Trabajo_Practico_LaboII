@@ -1,7 +1,9 @@
 ﻿using Entidades.Interfaces;
 using Entidades.Modelos;
 using Entidades.Repositorios;
+using Entidades.Excepciones;
 using System;
+using static System.Exception;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,63 +14,74 @@ using System.Xml.Linq;
 namespace Entidades.Presentadores
 {
     public class PresentadorLogin : PresentadorDeAcceso
-    {
-        public static Usuario? logeado;
+    {             
         private ILoginView vista;
-        List<Usuario> usuarios;
         int k;
 
         public PresentadorLogin(ILoginView vista)
         {
             this.vista = vista;
-            this.usuarios = ObtenerUsuariosDesdeBase();
-            k = 0;
+            k = 0;          
+            //throw new ErrorBaseDatosException("Se produjo un error en la base de Usuarios");
+            //throw new DatosIncorrectosException("Los datos ingresados no son válidos");
         }
 
         public override void LlenarDatos()
         {
             List<Usuario> auxUser = new List<Usuario>();
-            foreach(Usuario it in usuarios)
+            try
             {
-                if(it.NivelAcceso == "Admin")
+                if (GameManager.misJugadores != null)
                 {
-                    auxUser.Add(it);
+                    foreach (Usuario it in GameManager.misJugadores)
+                    {
+                        if (it.NivelAcceso == "Admin")
+                        {
+                            auxUser.Add(it);
+                        }
+                    }
+                    for (int i = k; i < auxUser.Count; i++)
+                    {
+                        vista.UserName = auxUser[i].NombreUsuario;
+                        vista.Password = auxUser[i].Contraseña;
+                        k++;
+                        break;
+                    }
+                    if (k == auxUser.Count)
+                    {
+                        k = 0;
+                    }
                 }
             }
-            for(int i = k; i < auxUser.Count; i++)
+            catch(ErrorBaseDatosException ex)
             {
-                vista.UserName = auxUser[i].NombreUsuario;
-                vista.Password = auxUser[i].Contraseña;
-                k++;
-                break;
-            }
-            if(k == auxUser.Count)
-            {
-                k = 0;
+                vista.Error = ex.Message;
             }
         }
    
         public bool VerificarUsuario(string name, string pass)
         {            
             bool entro = false;
-            foreach (Usuario item in usuarios)
+            try
             {
-                if ((name == item.NombreUsuario && pass == item.Contraseña) && item.NivelAcceso == "Admin")
+                if (GameManager.misJugadores != null)
                 {
-                    entro = true;
-                    logeado = item;
-                    break;
+                    foreach (Usuario item in GameManager.misJugadores)
+                    {
+                        if ((name == item.NombreUsuario && pass == item.Contraseña) && item.NivelAcceso == "Admin")
+                        {
+                            entro = true;
+                            GameManager.managerOn = item;
+                            break;
+                        }
+                    }
                 }
             }
+            catch(DatosIncorrectosException ex)
+            {
+                vista.Error = ex.Message;
+            }
             return entro;
-        }
-
-        public override List<Usuario> ObtenerUsuariosDesdeBase()
-        {            
-            RepositorioUsuarios usuariosBase = new RepositorioUsuarios();
-            usuarios = usuariosBase.GetAll();
-
-            return usuarios;
         }
     }
 }

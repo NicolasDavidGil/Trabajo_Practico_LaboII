@@ -43,15 +43,13 @@ namespace Entidades.Modelos
         //[StringLength(25, ErrorMessage = "El máximo de caracteres es 25")]
         public string Contraseña { get => contraseñaUsuario; set => contraseñaUsuario = value; }
 
-        //[Required(ErrorMessage = "El nivel de acceso es obligatorio")]
-        public string NivelAcceso { get => nivelAcceso; set => nivelAcceso = value; }
-
-        //[DisplayName("Puntaje")]
+        public string NivelAcceso { get => nivelAcceso; set => nivelAcceso = value; }    
         public int Puntaje { get => puntaje; set => puntaje = value; }
         public int Victorias { get => victorias; set => victorias = value; }
         public int Derrotas { get => derrotas; set => derrotas = value; }
         public int EstadoCuenta { get => estadoCuenta; set => estadoCuenta = value; }
 
-        public List<Carta> ManoJugador { get => manoJugador; set => manoJugador = value; }  
+        public List<Carta> ManoJugador { get => manoJugador; set => manoJugador = value; }
+    
     }
 }

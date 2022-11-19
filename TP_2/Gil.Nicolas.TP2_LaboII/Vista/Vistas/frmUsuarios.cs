@@ -35,19 +35,19 @@ namespace Vista.Vistas
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             userPresenter.LlenarDatos();
-            pageDetalles.Hide();
+            pageCrear.Hide();
             CargarDatosForm();
             btnBorrar.Visible = false;
             btnEditar.Visible = false;
         }
-        public string Nombre { get => txtNombre.Text; set => txtNombre.Text = value; }
-        public string Edad { get => txtEdad.Text; set => txtEdad.Text = value; }
-        public string Dni { get => txtDocumento.Text; set => txtDocumento.Text = value; }
-        public string Nacionalidad { get => cmbNacion.Text; set => cmbNacion.Text = value; }
-        public string UserName { get => txtApodo.Text; set => txtApodo.Text = value; }
-        public string Contraseña { get => txtContraseña.Text; set => txtContraseña.Text = value; }
-        public string NivelAcceso { get => cmbAcceso.Text; set => cmbAcceso.Text = value; }
-        public string Puntaje { get => lblPuntaje.Text; set => lblPuntaje.Text = value; }
+        public string Nombre { get => txtNombreNuevo.Text; set => txtNombreNuevo.Text = value; }
+        public string Edad { get => txtEdadNuevo.Text; set => txtEdadNuevo.Text = value; }
+        public string Dni { get => txtDocumentoNuevo.Text; set => txtDocumentoNuevo.Text = value; }
+        public string Nacionalidad { get => cmbNacionNuevo.Text; set => cmbNacionNuevo.Text = value; }
+        public string UserName { get => txtApodoNuevo.Text; set => txtApodoNuevo.Text = value; }
+        public string Contraseña { get => txtContraseñaNuevo.Text; set => txtContraseñaNuevo.Text = value; }
+        public string NivelAcceso { get => cmbAccesoNuevo.Text; set => cmbAccesoNuevo.Text = value; }
+        public string Puntaje { get => lblPuntajeBorrar.Text; set => lblPuntajeBorrar.Text = value; }
         public string TextoRazon { get => lblEliminacion.Text; set => lblEliminacion.Text = value; }
         public string RazonEliminacion { get => cmbRazonEliminacion.Text; set => cmbRazonEliminacion.Text = value; }
         public string EstadoCuenta { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -153,11 +153,12 @@ namespace Vista.Vistas
 
         public void CargarDatosForm()
         {
-            tabListado.TabPages.Remove(pageDetalles);
-            foreach(string it in userPresenter.misPaises)
-            {
-                cmbNacion.Items.Add(it);
-            }
+            tabListado.TabPages.Remove(pageCrear);
+            tabListado.TabPages.Remove(pageEditar);
+            tabListado.TabPages.Remove(pageBorrar);
+            if(GameManager.misPaises != null)
+            GameManager.misPaises.ForEach((x)=> cmbNacionNuevo.Items.Add(x));
+
             cmbRazonEliminacion.Items.Add("Inactividad");
             cmbRazonEliminacion.Items.Add("Violación de normas");
             cmbRazonEliminacion.Items.Add("Sospecha de amenaza");
@@ -253,18 +254,9 @@ namespace Vista.Vistas
                     break;
             }
         }
-        public void ActivarDetalles()
-        {
-            if(pageDetalles.IsAccessible)
-                pageDetalles.BringToFront();
-            else
-            {
-                tabListado.TabPages.Add(pageDetalles);                        
-            }
-        }
+        
         private void btnAgregarNuevo_Click(object sender, EventArgs e)
-        {
-            ActivarDetalles();
+        {            
             cmbRazonEliminacion.Visible = false;
             userPresenter.LLamarUsuarioNuevo();
             modiciacion = "Nuevo";
@@ -300,15 +292,6 @@ namespace Vista.Vistas
             }
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            pageLista.Show();
-            tabListado.TabPages.Remove(pageDetalles);
-        }
+    
     }
 }

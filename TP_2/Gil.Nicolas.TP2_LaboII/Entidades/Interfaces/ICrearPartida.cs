@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,9 @@ namespace Entidades.Interfaces
         string BoxJugadorUno { get; set; }
         string BoxJugadorDos { get; set; }
 
-        public bool VerificarDatos();
+        bool VerificarDatos();
 
-        public void CrearPartida();
+        void CargarUsuarios(List<Usuario> nono);
+
     }
 }

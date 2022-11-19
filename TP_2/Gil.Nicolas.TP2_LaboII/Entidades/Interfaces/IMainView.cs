@@ -11,7 +11,8 @@ namespace Entidades.Interfaces
     {      
         string Chat { get; set; }
         void SetListInDataGrid(List<Usuario> miLista);
-        void SetChat();
-        void SetPlayerNames(); 
+
+        void SetMatchInDataGrid();
+        void SetChat(string mensaje);
     }
 }

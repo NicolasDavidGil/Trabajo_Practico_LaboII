@@ -21,9 +21,14 @@ namespace Entidades.Presentadores
             this.partidaView = partidaView;
         }
 
-        public void IniciarPartida()
+        public void IniciarPartida(Partida match)
+        {            
+            
+        }
+
+        public void ActualizarChat(string mensaje)
         {
-            partidaView.IniciarPartida();
+            partidaView.Chat += mensaje;
         }
 
         public void FinalizarPartida()

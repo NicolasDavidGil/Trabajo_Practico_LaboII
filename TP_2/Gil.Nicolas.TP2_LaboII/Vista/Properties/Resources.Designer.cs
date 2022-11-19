@@ -513,9 +513,39 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bienvenido {
+            get {
+                object obj = ResourceManager.GetObject("bienvenido", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bienvenidook {
+            get {
+                object obj = ResourceManager.GetObject("bienvenidook", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bolivia {
             get {
                 object obj = ResourceManager.GetObject("Bolivia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bomba {
+            get {
+                object obj = ResourceManager.GetObject("bomba", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -643,6 +673,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edicion {
+            get {
+                object obj = ResourceManager.GetObject("edicion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ElSalvador {
             get {
                 object obj = ResourceManager.GetObject("ElSalvador", resourceCulture);
@@ -746,6 +786,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap Honduras {
             get {
                 object obj = ResourceManager.GetObject("Honduras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoUnoSinFondo {
+            get {
+                object obj = ResourceManager.GetObject("IconoUnoSinFondo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -933,6 +983,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap podioOk {
+            get {
+                object obj = ResourceManager.GetObject("podioOk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PuertoRico {
             get {
                 object obj = ResourceManager.GetObject("PuertoRico", resourceCulture);
@@ -1026,6 +1086,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap VSOK {
             get {
                 object obj = ResourceManager.GetObject("VSOK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WELCOME {
+            get {
+                object obj = ResourceManager.GetObject("WELCOME", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

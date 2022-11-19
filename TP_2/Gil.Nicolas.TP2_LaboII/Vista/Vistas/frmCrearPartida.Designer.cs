@@ -37,10 +37,10 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblErrores = new System.Windows.Forms.Label();
+            this.cmbTipoPartida = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(290, 33);
+            this.label1.Location = new System.Drawing.Point(303, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(236, 36);
             this.label1.TabIndex = 0;
@@ -114,7 +114,7 @@
             this.btnSalir.BackgroundImage = global::Vista.Properties.Resources.BotonSalir;
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.Location = new System.Drawing.Point(391, 6);
+            this.btnSalir.Location = new System.Drawing.Point(411, 6);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(173, 115);
             this.btnSalir.TabIndex = 6;
@@ -136,7 +136,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.lblErrores);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cmbTipoPartida);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label1);
@@ -150,36 +150,6 @@
             this.panel2.Size = new System.Drawing.Size(800, 303);
             this.panel2.TabIndex = 7;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.BackgroundImage = global::Vista.Properties.Resources.VSOK;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(338, 142);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 74);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(597, 218);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 23);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "TIPO DE PARTIDA:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(630, 244);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 7;
-            // 
             // lblErrores
             // 
             this.lblErrores.AutoSize = true;
@@ -191,6 +161,36 @@
             this.lblErrores.Size = new System.Drawing.Size(104, 27);
             this.lblErrores.TabIndex = 7;
             this.lblErrores.Text = "Errores";
+            // 
+            // cmbTipoPartida
+            // 
+            this.cmbTipoPartida.FormattingEnabled = true;
+            this.cmbTipoPartida.Location = new System.Drawing.Point(513, 180);
+            this.cmbTipoPartida.Name = "cmbTipoPartida";
+            this.cmbTipoPartida.Size = new System.Drawing.Size(121, 23);
+            this.cmbTipoPartida.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(480, 154);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(180, 23);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "TIPO DE PARTIDA:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.BackgroundImage = global::Vista.Properties.Resources.VSOK;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(338, 142);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 74);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // frmCrearPartida
             // 
@@ -223,7 +223,7 @@
         private Button btnSalir;
         private Panel panel1;
         private Panel panel2;
-        private ComboBox comboBox1;
+        private ComboBox cmbTipoPartida;
         private Label label4;
         private PictureBox pictureBox1;
         private Label lblErrores;

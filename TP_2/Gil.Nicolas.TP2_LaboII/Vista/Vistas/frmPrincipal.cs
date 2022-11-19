@@ -15,16 +15,15 @@ using System.Windows.Forms;
 namespace Vista.Vistas
 {
     public partial class frmPrincipal : Form
-    {
-        public static List<Task> misTareas = new List<Task>();
+    {       
         public frmPrincipal()
         {
-            InitializeComponent();                     
+            InitializeComponent();            
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            lblUsuario.Text = "Hola  " + PresentadorLogin.logeado?.Nombre;
+            lblUsuario.Text = "Hola  " + GameManager.managerOn?.Nombre;
             CargarDefecto();
         }
 
@@ -64,7 +63,7 @@ namespace Vista.Vistas
 
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
-            frmEstadisticas user = new frmEstadisticas();
+            frmEstadisticas user = frmEstadisticas.GetInstance(this);
             user.MdiParent = this;
             this.MdiChildren.Append(user);
             user.Show();

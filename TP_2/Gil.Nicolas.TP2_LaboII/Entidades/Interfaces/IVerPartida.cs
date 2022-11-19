@@ -11,13 +11,11 @@ namespace Entidades.Interfaces
     {
         int CantCartasJugadorUno { get;  }
         int CantCartasJugadorDos { get; }
+        int CantidadManos { get; set; }
         string Chat { get; set; }        
         Usuario JugadorUno { get; set; }
         Usuario JugadorDos { get; set; }
         List<Carta> MazoEnUso { get; set; }
-        List<Carta> MazoAuxiliar { get; set; }
-        
-        void IniciarPartida();
-        void FinalizarPartida();
+        List<Carta> MazoAuxiliar { get; set; }       
     }
 }

@@ -30,7 +30,7 @@ namespace Entidades.Presentadores
             {
                 foreach (Usuario us in misJugadores)
                 {
-                    if (us.NombreUsuario == PresentadorLogin.logeado?.NombreUsuario)
+                    if (us.NombreUsuario == GameManager.managerOn?.NombreUsuario)
                     {
                         misJugadores.Remove(us);
                     }

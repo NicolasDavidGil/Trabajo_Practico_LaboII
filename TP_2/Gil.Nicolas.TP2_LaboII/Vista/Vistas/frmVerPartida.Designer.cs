@@ -116,9 +116,9 @@
             // 
             // rtxChat
             // 
-            this.rtxChat.Location = new System.Drawing.Point(12, 148);
+            this.rtxChat.Location = new System.Drawing.Point(6, 148);
             this.rtxChat.Name = "rtxChat";
-            this.rtxChat.Size = new System.Drawing.Size(261, 498);
+            this.rtxChat.Size = new System.Drawing.Size(267, 498);
             this.rtxChat.TabIndex = 0;
             this.rtxChat.Text = "";
             // 
