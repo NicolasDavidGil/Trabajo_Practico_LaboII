@@ -30,27 +30,12 @@ namespace Entidades.Presentadores
 
         public List<Usuario> ObtenerUsuarios()
         {
-            List<Usuario> usuarios = new RepositorioDeAcceso().GetUsers();
-
-            return usuarios;
+            return new RepositorioDeAcceso().GetUsers();
         }
 
         public List<Carta> ObtenerMazo()
         {
             return new RepositorioDeAcceso().GetMazo();
-        }
-
-        public void LLenarVista()
-        {
-            _main.TipoPartida = "Partida Completa";
-            _main.TipoPartida = "Partida Espress";
-            ObtenerUsuarios().ForEach((x) =>
-            {
-                if(x.EstadoCuenta == 1)
-                {
-                    _main.JugadorUno = x.NombreUsuario;                    
-                }                
-            });
-        }
+        }     
     }
 }

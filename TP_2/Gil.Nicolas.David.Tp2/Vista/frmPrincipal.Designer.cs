@@ -57,9 +57,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnObservar = new System.Windows.Forms.Button();
             this.dgvPartidasActivas = new System.Windows.Forms.DataGridView();
-            this.jugadorUnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jugadorDosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cartaMesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreUno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreDos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoPartidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.partidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnEnviar = new System.Windows.Forms.Button();
@@ -312,11 +311,11 @@
             this.lblErrores.BackColor = System.Drawing.Color.Black;
             this.lblErrores.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblErrores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrores.Location = new System.Drawing.Point(653, 67);
+            this.lblErrores.Location = new System.Drawing.Point(653, 63);
             this.lblErrores.Name = "lblErrores";
-            this.lblErrores.Size = new System.Drawing.Size(104, 27);
+            this.lblErrores.Size = new System.Drawing.Size(434, 27);
             this.lblErrores.TabIndex = 15;
-            this.lblErrores.Text = "Errores";
+            this.lblErrores.Text = "SE DEBEN COMPLETAR TODOS LOS CAMPOS";
             // 
             // cmbTipoPartida
             // 
@@ -414,40 +413,35 @@
             this.dgvPartidasActivas.AutoGenerateColumns = false;
             this.dgvPartidasActivas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPartidasActivas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.jugadorUnoDataGridViewTextBoxColumn,
-            this.jugadorDosDataGridViewTextBoxColumn,
-            this.cartaMesaDataGridViewTextBoxColumn,
+            this.NombreUno,
+            this.NombreDos,
             this.tipoPartidaDataGridViewTextBoxColumn});
             this.dgvPartidasActivas.DataSource = this.partidaBindingSource;
             this.dgvPartidasActivas.Location = new System.Drawing.Point(31, 184);
             this.dgvPartidasActivas.Name = "dgvPartidasActivas";
             this.dgvPartidasActivas.RowTemplate.Height = 25;
-            this.dgvPartidasActivas.Size = new System.Drawing.Size(450, 108);
+            this.dgvPartidasActivas.Size = new System.Drawing.Size(348, 108);
             this.dgvPartidasActivas.TabIndex = 4;
             this.dgvPartidasActivas.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPartidasActivas_RowHeaderMouseClick);
             // 
-            // jugadorUnoDataGridViewTextBoxColumn
+            // NombreUno
             // 
-            this.jugadorUnoDataGridViewTextBoxColumn.DataPropertyName = "JugadorUno";
-            this.jugadorUnoDataGridViewTextBoxColumn.HeaderText = "JugadorUno";
-            this.jugadorUnoDataGridViewTextBoxColumn.Name = "jugadorUnoDataGridViewTextBoxColumn";
+            this.NombreUno.DataPropertyName = "NombreUno";
+            this.NombreUno.HeaderText = "Jugador Uno";
+            this.NombreUno.Name = "NombreUno";
+            this.NombreUno.ReadOnly = true;
             // 
-            // jugadorDosDataGridViewTextBoxColumn
+            // NombreDos
             // 
-            this.jugadorDosDataGridViewTextBoxColumn.DataPropertyName = "JugadorDos";
-            this.jugadorDosDataGridViewTextBoxColumn.HeaderText = "JugadorDos";
-            this.jugadorDosDataGridViewTextBoxColumn.Name = "jugadorDosDataGridViewTextBoxColumn";
-            // 
-            // cartaMesaDataGridViewTextBoxColumn
-            // 
-            this.cartaMesaDataGridViewTextBoxColumn.DataPropertyName = "CartaMesa";
-            this.cartaMesaDataGridViewTextBoxColumn.HeaderText = "CartaMesa";
-            this.cartaMesaDataGridViewTextBoxColumn.Name = "cartaMesaDataGridViewTextBoxColumn";
+            this.NombreDos.DataPropertyName = "NombreDos";
+            this.NombreDos.HeaderText = "Jugador Dos";
+            this.NombreDos.Name = "NombreDos";
+            this.NombreDos.ReadOnly = true;
             // 
             // tipoPartidaDataGridViewTextBoxColumn
             // 
             this.tipoPartidaDataGridViewTextBoxColumn.DataPropertyName = "TipoPartida";
-            this.tipoPartidaDataGridViewTextBoxColumn.HeaderText = "TipoPartida";
+            this.tipoPartidaDataGridViewTextBoxColumn.HeaderText = "Tipo Partida";
             this.tipoPartidaDataGridViewTextBoxColumn.Name = "tipoPartidaDataGridViewTextBoxColumn";
             // 
             // partidaBindingSource
@@ -644,11 +638,10 @@
         private DataGridViewTextBoxColumn nacionalidadDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn EstadoCuenta;
         private BindingSource usuarioBindingSource;
-        private DataGridViewTextBoxColumn jugadorUnoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn jugadorDosDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn cartaMesaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tipoPartidaDataGridViewTextBoxColumn;
         private BindingSource partidaBindingSource;
         private Panel pnlMain;
+        private DataGridViewTextBoxColumn NombreUno;
+        private DataGridViewTextBoxColumn NombreDos;
+        private DataGridViewTextBoxColumn tipoPartidaDataGridViewTextBoxColumn;
     }
 }

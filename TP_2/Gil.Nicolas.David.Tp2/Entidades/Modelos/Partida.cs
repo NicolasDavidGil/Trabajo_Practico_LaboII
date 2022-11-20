@@ -55,6 +55,9 @@ namespace Entidades.Modelos
         public Carta UltimaUno { get => ultimaJugUno; set => ultimaJugUno = value; }
         public Carta UltimaDos { get => ultimaJugDos; set => ultimaJugDos = value; }
         public string Ganador { get => ganador; set => ganador = value; }
+
+        public string NombreUno { get => jugadorUno.NombreUsuario; }
+        public string NombreDos { get => jugadorDos.NombreUsuario; }
         public int TurnoJuego { get => turnoJuego; set => turnoJuego = value; }
         public List<Carta> Mazo { get => mazo; set => mazo = value; }
         public List<Carta> MazoAux { get => mazoAux; set => mazoAux = value; }
@@ -79,13 +82,13 @@ namespace Entidades.Modelos
                 JugarPartida();
                 if (jugadorUno.ManoJugador.Count == 0)
                 {
-                    ganador = jugadorUno.NombreUsuario;
+                    Ganador = jugadorUno.NombreUsuario;
                 }
                 else
                 {
                     if (jugadorDos.ManoJugador.Count == 0)
                     {
-                        ganador = jugadorDos.NombreUsuario;
+                        Ganador = jugadorDos.NombreUsuario;
                     }
                 }
             }
@@ -99,11 +102,11 @@ namespace Entidades.Modelos
                 {
                     if (jugadorUno.ManoJugador.Count > jugadorDos.ManoJugador.Count)
                     {
-                        ganador = jugadorDos.NombreUsuario;
+                        Ganador = jugadorDos.NombreUsuario;
                     }
                     else
                     {
-                        ganador = jugadorUno.NombreUsuario;
+                        Ganador = jugadorUno.NombreUsuario;
                     }
                 }
             }

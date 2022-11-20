@@ -17,7 +17,7 @@ namespace Entidades.Interfaces
         string Chat { get; set; }
         string TextoParaChat { get; set; }
         
-        void SetPlayersDataGrid();
+        void LLenarForm();
         void SetTextToChat(string mensaje);
 
         public event EventHandler EscribirChatEvento;

@@ -6,9 +6,11 @@ using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Entidades.Excepciones;
 using Entidades.Interfaces;
 using Entidades.Modelos;
 using Entidades.Presentadores;
@@ -20,9 +22,11 @@ namespace Vista
     {
         List<PresentadorDeJuego> hilosJuegos;
         PresentadorPrincipal main;
+        RowIndexException errorRow;
         public static int indexPartida;
         frmVerPartida? visual;
         List<Usuario>? data;
+        DateTime hora = new DateTime();
         public event EventHandler? EscribirChatEvento;
   
         public frmPrincipal()
@@ -33,6 +37,7 @@ namespace Vista
             data = main.ObtenerUsuarios();
             hilosJuegos = new List<PresentadorDeJuego>();            
             Mazo mazoJuegos = new Mazo();
+            errorRow = new RowIndexException("Error en la lectura del indice");
             mazoJuegos.MiMazo = main.ObtenerMazo();
             Serializadora<Mazo>.EscribirJson("MazoCartas", mazoJuegos);
         }
@@ -48,8 +53,8 @@ namespace Vista
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            main.LLenarVista();
-            SetPlayersDataGrid();
+           
+            LLenarForm();
             dgvPartidasActivas.DataSource = null;
             pnlNuevaPartida.Visible = false;
             lblErrores.Visible = false;
@@ -79,6 +84,7 @@ namespace Vista
 
         private void btnJugarPartida_Click(object sender, EventArgs e)
         {
+            pnlMain.Visible = false;
             frmJugarPartida jugar = frmJugarPartida.GetInstance(this);
             jugar.MdiParent = this;
             this.MdiChildren.Append(jugar);
@@ -96,6 +102,7 @@ namespace Vista
 
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
+            LLenarForm();
             pnlMain.Visible = false;
             frmEstadisticas user = frmEstadisticas.GetInstance(this);
             user.MdiParent = this;
@@ -117,30 +124,35 @@ namespace Vista
             user.Show();
         }        
         private async Task<bool> CrearPartida()
-        {
+        {            
             if(!String.IsNullOrWhiteSpace(JugadorUno) && !String.IsNullOrWhiteSpace(JugadorDos) && !String.IsNullOrWhiteSpace(TipoPartida))
             {
                 Usuario uno = new Usuario("", 0, 0, "", "", "", "", 0, 0, 0, 0);
                 Usuario dos = new Usuario("", 0, 0, "", "", "", "", 0, 0, 0, 0);
 
-                foreach (Usuario it in main.ObtenerUsuarios())
+                foreach (Usuario it in data)
                 {
                     if (JugadorUno == it.NombreUsuario)
+                    {
                         uno = it;
-                    JugadorUno = "";
+                        it.EstadoCuenta = 0;
+                        JugadorUno = "";
+                    }
                     if (JugadorDos == it.NombreUsuario)
+                    {
                         dos = it;
-                    JugadorDos = "";
+                        it.EstadoCuenta = 0;
+                        JugadorDos = "";
+                    }
                 }
                 //No verifico los usuarios porque se que los combobox tiene solo usuarios libres
                 PresentadorDeJuego gameAdmin = new PresentadorDeJuego();
                 hilosJuegos.Add(gameAdmin);
                 gameAdmin.IniciarPartida(uno, dos, TipoPartida);
-
-                await gameAdmin.IniciarTarea();
-
-                return true; 
-            }
+                Chat += "\n" + dos.NombreUsuario + " y " + uno.NombreUsuario + " mediran su destreza en una nueva partida, puedes observalos y darles tu apoyo!!\n";
+                await gameAdmin.IniciarTarea();                
+                return true;
+            }            
             return false;
         }
 
@@ -169,15 +181,17 @@ namespace Vista
         {
             SetTextToChat(TextoParaChat);
         }
-
-        public void SetPlayersDataGrid()
+      
+        public void LLenarForm()
         {
-            List<Usuario> usuarios = main.ObtenerUsuarios();
+            TipoPartida = "Partida Completa";
+            TipoPartida = "Partida Espress";
             List<Usuario> filtrada = new List<Usuario>();
-            foreach (Usuario it in usuarios)
+            foreach (Usuario it in data)
             {
-                if (it.EstadoCuenta == 1)
+                if (it.EstadoCuenta == 1 && it.Nombre != Usuario)
                 {
+                    JugadorUno = it.NombreUsuario;
                     filtrada.Add(it);                    
                 }
             }
@@ -201,9 +215,23 @@ namespace Vista
         }
 
         private void tmrPrincipal_Tick(object sender, EventArgs e)
-        {
+        {            
             lblHora.Text = DateTime.Now.ToLongTimeString();
             lblFecha.Text = DateTime.Now.ToShortDateString();
+            hora = hora.AddSeconds(1);
+            int horaInt = int.Parse(hora.ToString("ss"));
+
+            if (horaInt % 5 == 0)
+            {
+                lblErrores.Visible = false;
+                LLenarForm();
+
+                if (PresentadorPrincipal.partidasActivas?.Count < 1)
+                    dgvPartidasActivas.DataSource = null;
+                else
+                    dgvPartidasActivas.DataSource = PresentadorPrincipal.partidasActivas;
+                
+            }
         }
 
         private void dgvPartidasActivas_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -219,21 +247,28 @@ namespace Vista
                     }
                 }
             }
-            catch
+            catch (RowIndexException ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
         private async void btnCrearNuevaPartida_Click(object sender, EventArgs e)
         {
-            await CrearPartida();
-            dgvPartidasActivas.DataSource = null;
-            dgvPartidasActivas.DataSource = PresentadorPrincipal.partidasActivas;
-            pnlNuevaPartida.Visible = false;
-            cmbJugadorDos.Text = "";
-            cmbJugadorDos.Text = "";
-            cmbTipoPartida.Text = "";
+            if (!String.IsNullOrWhiteSpace(JugadorUno) && !String.IsNullOrWhiteSpace(JugadorDos) && !String.IsNullOrWhiteSpace(TipoPartida))
+            {
+                await CrearPartida();
+                dgvPartidasActivas.DataSource = null;
+                if (PresentadorPrincipal.partidasActivas?.Count > 0)
+                    dgvPartidasActivas.DataSource = PresentadorPrincipal.partidasActivas;
+                pnlNuevaPartida.Visible = false;
+                cmbJugadorDos.Text = "";
+                cmbJugadorDos.Text = "";
+                cmbTipoPartida.Text = "";
+            }else
+            {                
+                lblErrores.Visible = true;
+            }
         }
 
         private void cmbJugadorUno_SelectedIndexChanged(object sender, EventArgs e)
@@ -242,7 +277,7 @@ namespace Vista
             {
                 data.ForEach((X) =>
                 {
-                    if (JugadorUno != X.NombreUsuario && X.EstadoCuenta == 1 && X.NombreUsuario != frmLogin.logeado.NombreUsuario)
+                    if (JugadorUno != X.NombreUsuario && X.EstadoCuenta == 1 && X.NombreUsuario != frmLogin.logeado?.NombreUsuario)
                     {
                         JugadorDos = X.NombreUsuario;
                     }

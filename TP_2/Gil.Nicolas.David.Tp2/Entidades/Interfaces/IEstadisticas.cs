@@ -14,7 +14,6 @@ namespace Entidades.Interfaces
         string TopUno { get; set; }
         string TopDos { get; set; }
         string TopTres { get; set; }
-
-        void SetDataGrid(List<Partida> list);
+        
     }
 }

@@ -29,7 +29,6 @@ namespace Vista
             InitializeComponent();
             admin = enJuego;
             admin.EventoPartida += Visualizacion;
-            admin.EventoTerminarPartida += FinalizarPartida;
         }
 
         public string Chat { get => rtbPartida.Text; set => rtbPartida.Text = value; }
@@ -40,8 +39,8 @@ namespace Vista
         {
             Chat += "\n" + admin.Match?.JugadorUno.NombreUsuario + " dice: Buenas, " + admin.Match?.JugadorDos.NombreUsuario + " mucha suerte!!";
             Chat += "\n" + admin.Match?.JugadorDos.NombreUsuario + " dice: Gracias " + admin.Match?.JugadorUno.NombreUsuario + " igualmente!";
-            btnJugadorUno.Text = admin.Match?.JugadorUno.NombreUsuario + "\nScore: " + admin.Match?.JugadorUno.Puntaje.ToString();
-            btnJugadorDos.Text = admin.Match?.JugadorDos.NombreUsuario + "\nScore: " + admin.Match?.JugadorDos.Puntaje.ToString();
+            JugadorUno = admin.Match?.JugadorUno.NombreUsuario + "\nScore: " + admin.Match?.JugadorUno.Puntaje.ToString();
+            JugadorDos = admin.Match?.JugadorDos.NombreUsuario + "\nScore: " + admin.Match?.JugadorDos.Puntaje.ToString();
         }
         public void Visualizacion(Partida nueva)
         {
@@ -71,21 +70,16 @@ namespace Vista
                 MostrarCartasManos(nueva);             
                 if(nueva.JugadorUno.ManoJugador.Count == 1)
                 {
-                    Chat += nueva.JugadorUno.NombreUsuario + " dice: UNOOOOOOO!!!!";
+                    Chat += "\n" + nueva.JugadorUno.NombreUsuario + " dice: UNOOOOOOO!!!!";
                 }else
                 {
                     if(nueva.JugadorDos.ManoJugador.Count == 1)
                     {
-                        Chat += nueva.JugadorDos.NombreUsuario + " dice: UNOOOOOOO!!!!";
+                        Chat += "\n" + nueva.JugadorDos.NombreUsuario + " dice: UNOOOOOOO!!!!";
                     }
                 }
             }
-        }
-
-        public void FinalizarPartida(Partida final)
-        {
-            new RepositorioDeAcceso().SaveMatch(final);                        
-        }
+        }    
 
         public void MostrarCartasManos(Partida part)
         {

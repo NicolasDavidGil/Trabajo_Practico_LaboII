@@ -35,8 +35,8 @@
             this.rtbEstadisticas = new System.Windows.Forms.RichTextBox();
             this.dgvEstadisticas = new System.Windows.Forms.DataGridView();
             this.fechaPartidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jugadorUnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jugadorDosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreUno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreDos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ganadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoPartidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.partidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -86,8 +86,8 @@
             this.dgvEstadisticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstadisticas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaPartidaDataGridViewTextBoxColumn,
-            this.jugadorUnoDataGridViewTextBoxColumn,
-            this.jugadorDosDataGridViewTextBoxColumn,
+            this.NombreUno,
+            this.NombreDos,
             this.ganadorDataGridViewTextBoxColumn,
             this.tipoPartidaDataGridViewTextBoxColumn});
             this.dgvEstadisticas.DataSource = this.partidaBindingSource;
@@ -100,33 +100,44 @@
             // 
             // fechaPartidaDataGridViewTextBoxColumn
             // 
+            this.fechaPartidaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.fechaPartidaDataGridViewTextBoxColumn.DataPropertyName = "FechaPartida";
             this.fechaPartidaDataGridViewTextBoxColumn.HeaderText = "FechaPartida";
             this.fechaPartidaDataGridViewTextBoxColumn.Name = "fechaPartidaDataGridViewTextBoxColumn";
             // 
-            // jugadorUnoDataGridViewTextBoxColumn
+            // NombreUno
             // 
-            this.jugadorUnoDataGridViewTextBoxColumn.DataPropertyName = "JugadorUno";
-            this.jugadorUnoDataGridViewTextBoxColumn.HeaderText = "JugadorUno";
-            this.jugadorUnoDataGridViewTextBoxColumn.Name = "jugadorUnoDataGridViewTextBoxColumn";
+            this.NombreUno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NombreUno.DataPropertyName = "NombreUno";
+            this.NombreUno.HeaderText = "Jugador Uno";
+            this.NombreUno.Name = "NombreUno";
+            this.NombreUno.ReadOnly = true;
+            this.NombreUno.Width = 99;
             // 
-            // jugadorDosDataGridViewTextBoxColumn
+            // NombreDos
             // 
-            this.jugadorDosDataGridViewTextBoxColumn.DataPropertyName = "JugadorDos";
-            this.jugadorDosDataGridViewTextBoxColumn.HeaderText = "JugadorDos";
-            this.jugadorDosDataGridViewTextBoxColumn.Name = "jugadorDosDataGridViewTextBoxColumn";
+            this.NombreDos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NombreDos.DataPropertyName = "NombreDos";
+            this.NombreDos.HeaderText = "Jugador Dos";
+            this.NombreDos.Name = "NombreDos";
+            this.NombreDos.ReadOnly = true;
+            this.NombreDos.Width = 97;
             // 
             // ganadorDataGridViewTextBoxColumn
             // 
+            this.ganadorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ganadorDataGridViewTextBoxColumn.DataPropertyName = "Ganador";
             this.ganadorDataGridViewTextBoxColumn.HeaderText = "Ganador";
             this.ganadorDataGridViewTextBoxColumn.Name = "ganadorDataGridViewTextBoxColumn";
+            this.ganadorDataGridViewTextBoxColumn.Width = 77;
             // 
             // tipoPartidaDataGridViewTextBoxColumn
             // 
+            this.tipoPartidaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.tipoPartidaDataGridViewTextBoxColumn.DataPropertyName = "TipoPartida";
             this.tipoPartidaDataGridViewTextBoxColumn.HeaderText = "TipoPartida";
             this.tipoPartidaDataGridViewTextBoxColumn.Name = "tipoPartidaDataGridViewTextBoxColumn";
+            this.tipoPartidaDataGridViewTextBoxColumn.Width = 92;
             // 
             // partidaBindingSource
             // 
@@ -137,7 +148,7 @@
             this.lblTopTres.AutoSize = true;
             this.lblTopTres.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTopTres.ForeColor = System.Drawing.Color.DarkViolet;
-            this.lblTopTres.Location = new System.Drawing.Point(799, 324);
+            this.lblTopTres.Location = new System.Drawing.Point(797, 336);
             this.lblTopTres.Name = "lblTopTres";
             this.lblTopTres.Size = new System.Drawing.Size(36, 17);
             this.lblTopTres.TabIndex = 2;
@@ -148,7 +159,7 @@
             this.lblTopDos.AutoSize = true;
             this.lblTopDos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTopDos.ForeColor = System.Drawing.Color.DarkViolet;
-            this.lblTopDos.Location = new System.Drawing.Point(610, 303);
+            this.lblTopDos.Location = new System.Drawing.Point(592, 312);
             this.lblTopDos.Name = "lblTopDos";
             this.lblTopDos.Size = new System.Drawing.Size(36, 17);
             this.lblTopDos.TabIndex = 1;
@@ -159,7 +170,7 @@
             this.lblTopUno.AutoSize = true;
             this.lblTopUno.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTopUno.ForeColor = System.Drawing.Color.DarkViolet;
-            this.lblTopUno.Location = new System.Drawing.Point(710, 267);
+            this.lblTopUno.Location = new System.Drawing.Point(703, 271);
             this.lblTopUno.Name = "lblTopUno";
             this.lblTopUno.Size = new System.Drawing.Size(36, 17);
             this.lblTopUno.TabIndex = 0;
@@ -222,13 +233,13 @@
         private Label lblTopDos;
         private Label lblTopUno;
         private Button button1;
-        private DataGridViewTextBoxColumn fechaPartidaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn jugadorUnoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn jugadorDosDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn ganadorDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn tipoPartidaDataGridViewTextBoxColumn;
         private BindingSource partidaBindingSource;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn fechaPartidaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn NombreUno;
+        private DataGridViewTextBoxColumn NombreDos;
+        private DataGridViewTextBoxColumn ganadorDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tipoPartidaDataGridViewTextBoxColumn;
     }
 }

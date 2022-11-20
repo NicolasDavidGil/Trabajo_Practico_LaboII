@@ -12,6 +12,9 @@ using Entidades.Interfaces;
 using Entidades.Modelos;
 using Entidades.Presentadores;
 using Entidades.Repositorio;
+using static System.Net.Mime.MediaTypeNames;
+using Vista.Properties;
+using System.Collections;
 
 namespace Vista
 {
@@ -34,7 +37,9 @@ namespace Vista
 
         private void frmEstadisticas_Load(object sender, EventArgs e)
         {
-            admin.LLenarDatos(); 
+            admin.LLenarDatos();
+            dgvEstadisticas.DataSource = null;
+            dgvEstadisticas.DataSource = admin.ObtenerHistorial();
         }
 
         public static frmEstadisticas GetInstance(frmPrincipal padreContenedor)
@@ -61,12 +66,6 @@ namespace Vista
             if(principal != null)
             principal.RefrescarForm();
             this.Close();
-        }
-
-        public void SetDataGrid(List<Partida> partidas)
-        {
-            dgvEstadisticas.DataSource = null;
-            dgvEstadisticas.DataSource = partidas;
         }
 
         private void dgvEstadisticas_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

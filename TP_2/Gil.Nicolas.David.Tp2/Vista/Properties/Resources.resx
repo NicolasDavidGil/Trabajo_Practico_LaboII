@@ -151,14 +151,14 @@
   <data name="Africa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Africa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="6Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6Azul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Haiti" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Haiti.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="4Rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4Rojo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Panama" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Panama.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cargando" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cargando.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,11 +190,11 @@
   <data name="4Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4Azul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RepublicaDominicana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RepublicaDominicana.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="GiraVerde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GiraVerde.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GiraAmarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GiraAmarillo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cuba" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cuba.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,14 +208,14 @@
   <data name="6Verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6Verde.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="9Rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9Rojo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="MasDosAmarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MasDosAmarillo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Belice" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Belice.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="9Verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9Verde.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SalteaAzul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SalteaAzul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,11 +226,17 @@
   <data name="MasDosRojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MasDosRojo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VSOK" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VSOK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tapaCarta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tapaCarta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Chile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chile.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mant1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mant1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="9Amarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9Amarillo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SalteaAmarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SalteaAmarillo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,17 +256,20 @@
   <data name="MasDosVerde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MasDosVerde.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="0Amarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\0Amarillo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="8Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8Azul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Canada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Canada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Asia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Asia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1Azul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="0Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\0Azul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MesaVerPartida" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MesaVerPartida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="game1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\game1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PuertoRico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PuertoRico.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -334,8 +343,8 @@
   <data name="Venezuela" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Venezuela.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="9Amarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9Amarillo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MesaVerPartida" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MesaVerPartida.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Guatemala" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Guatemala.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -346,20 +355,20 @@
   <data name="GiraAzul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GiraAzul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Canada" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Canada.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="0Amarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\0Amarillo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Peru" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Peru.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tapaCarta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tapaCarta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Panama" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Panama.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="8Rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8Rojo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="6Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6Azul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cerrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cerrar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -373,11 +382,11 @@
   <data name="2Amarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2Amarillo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8Azul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1Azul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GiraAmarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GiraAmarillo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RepublicaDominicana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RepublicaDominicana.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="9Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9Azul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -388,14 +397,14 @@
   <data name="3Amarillo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3Amarillo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="0Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\0Azul.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="VSOK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VSOK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2Verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2Verde.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="9Verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9Verde.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="9Rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9Rojo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Europa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Europa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -409,7 +418,7 @@
   <data name="CambiaColor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CambiaColor.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="game1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\game1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mant2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mant2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

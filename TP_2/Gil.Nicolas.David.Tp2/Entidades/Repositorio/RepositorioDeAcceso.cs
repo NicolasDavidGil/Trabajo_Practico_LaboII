@@ -218,7 +218,7 @@ namespace Entidades.Repositorio
             {
                 conexion.Open();
                 command.Connection = conexion;
-                command.CommandText = "Select * from HistorialPartidas";
+                command.CommandText = "Select * from HistorialUno";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -227,6 +227,7 @@ namespace Entidades.Repositorio
                         string jugador1 = reader.GetString(1);
                         string jugador2 = reader.GetString(2);
                         string ganador = reader.GetString(3);
+                        string tipoPartida = reader.GetString(4);
                         DateTime fecha = DateTime.Parse(fechaStr);                        
                         Usuario auxJug1 = new("", 0, 0, "", "", "", "", 0, 0, 0, 0);
                         Usuario auxJug2 = new("", 0, 0, "", "", "", "", 0, 0, 0, 0);
@@ -242,7 +243,7 @@ namespace Entidades.Repositorio
                                 auxJug2 = item;
                             }
                         }
-                        Partida auxPartida = new(fecha, auxJug1, auxJug2, ganador);
+                        Partida auxPartida = new(fecha, auxJug1, auxJug2, ganador, tipoPartida);
 
                         historial.Add(auxPartida);
                     }
@@ -258,12 +259,13 @@ namespace Entidades.Repositorio
             {
                 conexion.Open();
                 command.Connection = conexion;
-                command.CommandText = "Insert into HistorialPartidas values (@Date, @JugadorUno, @JugadorDos, @ganador)";
+                command.CommandText = "Insert into HistorialUno values(@Date, @JugadorUno, @JugadorDos, @ganador, @tipo)";
                 command.Parameters.Clear();
-                command.Parameters.Add("@Date", SqlDbType.DateTime).Value = match.FechaPartida;
-                command.Parameters.Add("@JugadorUno", SqlDbType.VarChar).Value = match.JugadorUno.NombreUsuario;
-                command.Parameters.Add("@JugadorDos", SqlDbType.VarChar).Value = match.JugadorDos.NombreUsuario;
-                command.Parameters.Add("@ganador", SqlDbType.VarChar).Value = match.Ganador;
+                command.Parameters.AddWithValue("@Date", match.FechaPartida.ToString());
+                command.Parameters.AddWithValue("@JugadorUno", match.JugadorUno.NombreUsuario);
+                command.Parameters.AddWithValue("@JugadorDos", match.JugadorDos.NombreUsuario);
+                command.Parameters.AddWithValue("@ganador", match.Ganador);
+                command.Parameters.AddWithValue("@tipo", match.TipoPartida);
 
                 command.ExecuteNonQuery();
             }

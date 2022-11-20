@@ -18,17 +18,20 @@ namespace Entidades.Presentadores
         public PresentadorEstadisticas(IEstadisticas stats)
         {
             this._stat = stats;
-            partidas = new RepositorioDeAcceso().GetMatchs();
+            partidas = ObtenerHistorial();
             usuarios = new RepositorioDeAcceso().GetUsers();
         }
 
+        public List<Partida> ObtenerHistorial()
+        {
+            return new RepositorioDeAcceso().GetMatchs();
+        }
+
         public void LLenarDatos()
-        {            
-            if(partidas != null)
-                _stat.SetDataGrid(partidas);
-            _stat.Chat += "Bienvenido a las estadisticas de UTN UNO ROOM";
-            _stat.Chat += "\nCantidad de partidas jugadas: " + partidas?.Count;
-            _stat.Chat += "\nCantidad de jugadores registrados: " + usuarios?.Count;
+        {                       
+            _stat.Chat += "Bienvenido a las estadisticas de UTN UNO ROOM\n";
+            _stat.Chat += "\nCantidad de partidas jugadas: " + partidas?.Count + "\n";
+            _stat.Chat += "\nCantidad de jugadores registrados: " + usuarios?.Count + "\n";
             List<Usuario> misJugadores = new RepositorioDeAcceso().GetUserByScore();
             _stat.TopUno = "Nombre: " + misJugadores[0].NombreUsuario + "\nScore: " + misJugadores[0].Puntaje;
             _stat.TopDos = "Nombre: " + misJugadores[1].NombreUsuario + "\nScore: " + misJugadores[1].Puntaje;
@@ -39,7 +42,7 @@ namespace Entidades.Presentadores
         public void DataGridIndexChange(int index)
         {
             _stat.Chat += ("\nFecha: " + partidas[index].FechaPartida + "\nJugador Uno: " + partidas[index].JugadorUno.NombreUsuario + 
-                            "\nJugador Dos: " + partidas[index].JugadorDos.NombreUsuario + "\nGanador: " + partidas[index].Ganador);
+                            "\nJugador Dos: " + partidas[index].JugadorDos.NombreUsuario + "\nGanador: " + partidas[index].Ganador + "\n");
         }
     }
 }

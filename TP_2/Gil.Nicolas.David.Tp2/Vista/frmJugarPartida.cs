@@ -45,6 +45,8 @@ namespace Vista
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            if (principal != null)
+                principal.RefrescarForm();
             this.Close();
         }
     }
