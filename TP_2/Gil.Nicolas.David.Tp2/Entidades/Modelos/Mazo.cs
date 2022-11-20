@@ -16,5 +16,13 @@ namespace Entidades.Modelos
         }
 
         public List<Carta> MiMazo { get => miMazo; set => miMazo = value; }
+
+        public Carta Carta
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

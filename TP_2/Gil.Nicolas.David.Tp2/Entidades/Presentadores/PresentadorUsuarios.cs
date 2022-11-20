@@ -23,28 +23,36 @@ namespace Entidades.Presentadores
             this._usuarios.FiltrarDataGridEvento += RealizarBusqueda;
         }
 
+        public IUsuarios IUsuarios
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void RealizarBusqueda()
         {
             bool verificado = String.IsNullOrWhiteSpace(_usuarios.ValorBusqueda);
             if (verificado == false)
             {
-                _usuariosList = new RepositorioDeAcceso().GetUserByValue(_usuarios.ValorBusqueda);
+                _usuariosList = new RepositorioDeAcceso().ObtenerUsuariosPorValor(_usuarios.ValorBusqueda);
             }
             else
             {
-                _usuariosList = new RepositorioDeAcceso().GetUsers();
+                _usuariosList = new RepositorioDeAcceso().ObtenerUsuarios();
             }
             _usuarios.SetDataGridList(_usuariosList);    
         }
         public List<Usuario> TraerUsuariosDesdeBase()
         {
-            List<Usuario> usuarios = new RepositorioDeAcceso().GetUsers();
+            List<Usuario> usuarios = new RepositorioDeAcceso().ObtenerUsuarios();
 
             return usuarios;
         }
         public List<string> TraerPaisesDesdeBase()
         {
-            return new RepositorioDeAcceso().GetPaises();
+            return new RepositorioDeAcceso().ObtenerPaises();
         }
 
         public bool EditarBaseDeUsuarios(int aux, Usuario edicion)
@@ -53,10 +61,10 @@ namespace Entidades.Presentadores
             switch(aux)
             {
                 case 1:
-                    retorno = new RepositorioDeAcceso().AddUserInBase(edicion);
+                    retorno = new RepositorioDeAcceso().AgregarUsuarioNuevo(edicion);
                     break;
                 case 2:
-                    retorno = new RepositorioDeAcceso().EditUserInBase(edicion);
+                    retorno = new RepositorioDeAcceso().EditarUsuario(edicion);
                     break;
                 case 3:
                     retorno = new RepositorioDeAcceso().BorrarUsuarioDeLaBase(edicion);

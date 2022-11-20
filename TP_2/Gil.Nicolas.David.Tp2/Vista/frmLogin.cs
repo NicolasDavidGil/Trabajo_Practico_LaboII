@@ -1,23 +1,32 @@
 using Entidades.Excepciones;
+using Entidades.Interfaces;
 using Entidades.Modelos;
+using Entidades.Presentadores;
 using Entidades.Repositorio;
 using System.Collections.Generic;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Vista
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : Form, Ilogin
     {
         int k = 0;
         frmCargando? load;
+        PresentadorLogin admin;
         public static Usuario? logeado;
         List<Usuario> usuarios;
         DatosIncorrectosException errorLogeo;
+
+        public string Usuario { get => txtUserName.Text; set => txtUserName.Text = value; }
+        public string Contraseña { get => txtPassword.Text; set => txtPassword.Text = value; }
+
         public frmLogin()
         {
             InitializeComponent();
+            admin = new PresentadorLogin(this);
             errorLogeo = new DatosIncorrectosException("ERROR EN LA OPERACION DE INICIAR");
-            usuarios = new RepositorioDeAcceso().GetUsers();
+            usuarios = admin.ObtenerUsuarios();
+            
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -30,7 +39,7 @@ namespace Vista
             bool pepe;
             try
             {
-                pepe = VerificarUsuario(txtUserName.Text, txtPassword.Text);
+                pepe = VerificarUsuario(Usuario, Contraseña);
                 if (pepe)
                 {
                     this.Hide();
@@ -64,8 +73,8 @@ namespace Vista
                 }
                 for (int i = k; i < auxUser.Count; i++)
                 {
-                    txtUserName.Text = auxUser[i].NombreUsuario;
-                    txtPassword.Text = auxUser[i].Contraseña;
+                    Usuario = auxUser[i].NombreUsuario;
+                    Contraseña = auxUser[i].Contraseña;
                     k++;
                     break;
                 }

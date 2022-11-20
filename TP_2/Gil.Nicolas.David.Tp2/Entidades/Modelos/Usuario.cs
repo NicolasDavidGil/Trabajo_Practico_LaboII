@@ -49,5 +49,28 @@ namespace Entidades.Modelos
 
         public List<Carta> ManoJugador { get => manoJugador; set => manoJugador = value; }
 
+        public Presentadores.PresentadorPrincipal PresentadorPrincipal
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Presentadores.PresentadorUsuarios PresentadorUsuarios
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Presentadores.PresentadorEstadisticas PresentadorEstadisticas
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

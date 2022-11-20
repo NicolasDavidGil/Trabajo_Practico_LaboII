@@ -17,7 +17,7 @@ namespace Entidades.Test
         {
             List<Usuario> testList = new List<Usuario>();
 
-            testList = new RepositorioDeAcceso().GetUsers();
+            testList = new RepositorioDeAcceso().ObtenerUsuarios();
 
             Assert.IsNotNull(testList);
         }
@@ -27,7 +27,7 @@ namespace Entidades.Test
         {
             List<Carta> testList = new List<Carta>();
 
-            testList = new RepositorioDeAcceso().GetMazo();
+            testList = new RepositorioDeAcceso().ObtenerMazo();
 
             Assert.IsNotNull(testList);
         }
@@ -37,7 +37,7 @@ namespace Entidades.Test
         {
             List<Partida> testList = new List<Partida>();
 
-            testList = new RepositorioDeAcceso().GetMatchs();
+            testList = new RepositorioDeAcceso().ObtenerHistorial();
 
             Assert.IsNotNull(testList);
         }
@@ -46,7 +46,7 @@ namespace Entidades.Test
         {
             List<string> testList = new List<string>();
 
-            testList = new RepositorioDeAcceso().GetPaises();
+            testList = new RepositorioDeAcceso().ObtenerPaises();
 
             Assert.IsNotNull(testList);
         }

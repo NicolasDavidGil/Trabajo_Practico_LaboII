@@ -19,10 +19,9 @@ using Image = System.Drawing.Image;
 namespace Vista
 {
     public partial class frmVerPartida : Form, IVerPartida
-    {
+    {        
         Image? image;
-        PresentadorDeJuego admin;
-        PresentadorPrincipal? main;
+        PresentadorDeJuego? admin;        
         delegate void EstablecerVisual(Partida juego);
         public frmVerPartida(PresentadorDeJuego enJuego)
         {

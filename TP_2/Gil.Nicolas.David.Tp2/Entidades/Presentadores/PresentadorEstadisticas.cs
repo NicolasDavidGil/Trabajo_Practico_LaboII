@@ -19,12 +19,20 @@ namespace Entidades.Presentadores
         {
             this._stat = stats;
             partidas = ObtenerHistorial();
-            usuarios = new RepositorioDeAcceso().GetUsers();
+            usuarios = new RepositorioDeAcceso().ObtenerUsuarios();
+        }
+
+        public IEstadisticas IEstadisticas
+        {
+            get => default;
+            set
+            {
+            }
         }
 
         public List<Partida> ObtenerHistorial()
         {
-            return new RepositorioDeAcceso().GetMatchs();
+            return new RepositorioDeAcceso().ObtenerHistorial();
         }
 
         public void LLenarDatos()
@@ -32,7 +40,7 @@ namespace Entidades.Presentadores
             _stat.Chat += "Bienvenido a las estadisticas de UTN UNO ROOM\n";
             _stat.Chat += "\nCantidad de partidas jugadas: " + partidas?.Count + "\n";
             _stat.Chat += "\nCantidad de jugadores registrados: " + usuarios?.Count + "\n";
-            List<Usuario> misJugadores = new RepositorioDeAcceso().GetUserByScore();
+            List<Usuario> misJugadores = new RepositorioDeAcceso().ObtenerUsuariosPorPuntaje();
             _stat.TopUno = "Nombre: " + misJugadores[0].NombreUsuario + "\nScore: " + misJugadores[0].Puntaje;
             _stat.TopDos = "Nombre: " + misJugadores[1].NombreUsuario + "\nScore: " + misJugadores[1].Puntaje;
             _stat.TopTres = "Nombre: " + misJugadores[2].NombreUsuario + "\nScore: " + misJugadores[2].Puntaje;

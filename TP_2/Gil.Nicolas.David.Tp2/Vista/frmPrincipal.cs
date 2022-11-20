@@ -62,7 +62,8 @@ namespace Vista
             btnObservar.Enabled = true;
             Usuario = frmLogin.logeado.Nombre;
             Chat += "Atentos todos, " + frmLogin.logeado?.NombreUsuario + " acaba de llegar!! \n Demosle una cálida bienvenida!!";
-            
+            TipoPartida = "Partida Completa";
+            TipoPartida = "Partida Espress";
         }  
         /// <summary>
         /// Asocia el boton buscar y el apretar la tecla enter en la barra de escribir chat
@@ -183,9 +184,7 @@ namespace Vista
         }
       
         public void LLenarForm()
-        {
-            TipoPartida = "Partida Completa";
-            TipoPartida = "Partida Espress";
+        {           
             List<Usuario> filtrada = new List<Usuario>();
             foreach (Usuario it in data)
             {

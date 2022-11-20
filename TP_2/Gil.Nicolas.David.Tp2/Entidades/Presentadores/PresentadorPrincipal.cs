@@ -30,12 +30,12 @@ namespace Entidades.Presentadores
 
         public List<Usuario> ObtenerUsuarios()
         {
-            return new RepositorioDeAcceso().GetUsers();
+            return new RepositorioDeAcceso().ObtenerUsuarios();
         }
 
         public List<Carta> ObtenerMazo()
         {
-            return new RepositorioDeAcceso().GetMazo();
+            return new RepositorioDeAcceso().ObtenerMazo();
         }     
     }
 }

@@ -6,7 +6,7 @@ namespace Entidades.Test
     [TestClass]
     public class PartidaShould
     {
-        public static List<Usuario>? testUsers = new RepositorioDeAcceso().GetUsers();
+        public static List<Usuario>? testUsers = new RepositorioDeAcceso().ObtenerUsuarios();
         public static Partida testPartida = new Partida(DateTime.Now, testUsers[0], testUsers[1], "Partida Completa");
 
         [TestMethod]

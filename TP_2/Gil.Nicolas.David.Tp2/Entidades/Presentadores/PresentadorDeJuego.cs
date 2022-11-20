@@ -21,12 +21,10 @@ namespace Entidades.Presentadores
         }
 
         public Partida? Match { get => match; set => match = value; }
-
-        public event Action<Partida>? EventoTerminarPartida;
+                        
+               
         public event Action<Partida>? EventoPartida;
-        
-        
-        
+              
         public void IniciarPartida(Usuario jugadorUno, Usuario jugadorDos, string aux)
         {
             match = new Partida(DateTime.Now, jugadorUno, jugadorDos, aux);
@@ -73,7 +71,7 @@ namespace Entidades.Presentadores
 
         public void GuardarPartida(Partida nueva)
         {
-            new RepositorioDeAcceso().SaveMatch(nueva);
+            new RepositorioDeAcceso().SalvarPartida(nueva);
         }
         public async Task IniciarTarea()
         {

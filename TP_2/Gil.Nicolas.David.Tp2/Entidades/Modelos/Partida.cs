@@ -64,13 +64,21 @@ namespace Entidades.Modelos
         public string TipoPartida { get => tipoPartida; set => tipoPartida = value; }
         public int CantidadManos { get => cantidadManos; set => cantidadManos = value; }
 
+        public Carta Carta
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void EmpezarPartida()
         {
             this.turnoJuego = 1;
             Mazo newMazo = new Mazo();
             //newMazo = Serializadora<Mazo>.LeerJson("MazoCartas");
             //this.mazo = newMazo.MiMazo;
-            this.mazo = new RepositorioDeAcceso().GetMazo();
+            this.mazo = new RepositorioDeAcceso().ObtenerMazo();
             RepartirCartas();
             this.mazoAux.Add(cartaEnMesa);            
         }

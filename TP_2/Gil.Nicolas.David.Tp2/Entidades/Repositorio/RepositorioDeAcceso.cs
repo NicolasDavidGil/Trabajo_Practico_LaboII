@@ -19,7 +19,7 @@ namespace Entidades.Repositorio
         }
 
         //Mazo
-        public List<Carta> GetMazo()
+        public List<Carta> ObtenerMazo()
         {
             List<Carta> miMazo = new List<Carta>();
             using (var conexion = new SqlConnection(connectionString))
@@ -44,10 +44,8 @@ namespace Entidades.Repositorio
             }
             return miMazo;
         }
-
-
         //Usuarios
-        public List<Usuario> GetUsers()
+        public List<Usuario> ObtenerUsuarios()
         {
             List<Usuario> misUsuarios = new List<Usuario>();
             using (var conexion = new SqlConnection(connectionString))
@@ -79,13 +77,12 @@ namespace Entidades.Repositorio
             }
             return misUsuarios;
         }
-
-        public List<Usuario> GetUserByValue(string value) //35394776
+        public List<Usuario> ObtenerUsuariosPorValor(string value) 
         {
             List<Usuario> misUsuarios = new List<Usuario>();                      
             int documento = int.TryParse(value, out _) ? Convert.ToInt32(value) : -1;
             
-            GetUsers().ForEach((x) =>
+            ObtenerUsuarios().ForEach((x) =>
             {
                 if (x.Nombre.ToLower().Contains(value.ToLower()) || x.NombreUsuario.ToLower().Contains(value.ToLower()) || 
                     x.Documento.ToString().Contains(documento.ToString()))
@@ -95,8 +92,7 @@ namespace Entidades.Repositorio
             });            
             return misUsuarios;
         }
-
-        public List<Usuario> GetUserByScore()
+        public List<Usuario> ObtenerUsuariosPorPuntaje()
         {
             List<Usuario> misUsuarios = new List<Usuario>();
             using (var conexion = new SqlConnection(connectionString))
@@ -128,8 +124,7 @@ namespace Entidades.Repositorio
             }
             return misUsuarios;
         }
-
-        public bool AddUserInBase(Usuario nuevo)
+        public bool AgregarUsuarioNuevo(Usuario nuevo)
         {
             bool retorno = false;
 
@@ -159,8 +154,7 @@ namespace Entidades.Repositorio
             }
             return retorno;
         }
-
-        public bool EditUserInBase(Usuario editado)
+        public bool EditarUsuario(Usuario editado)
         {
             bool retorno = false;
 
@@ -183,7 +177,6 @@ namespace Entidades.Repositorio
             }
             return retorno;
         }
-
         public bool BorrarUsuarioDeLaBase(Usuario aBorrar)
         {
             bool retorno = false;
@@ -208,9 +201,8 @@ namespace Entidades.Repositorio
             }
             return retorno;
         }
-
         //Partidas
-        public List<Partida> GetMatchs()
+        public List<Partida> ObtenerHistorial()
         {
             List<Partida> historial = new List<Partida>();
             using (var conexion = new SqlConnection(connectionString))
@@ -232,7 +224,7 @@ namespace Entidades.Repositorio
                         Usuario auxJug1 = new("", 0, 0, "", "", "", "", 0, 0, 0, 0);
                         Usuario auxJug2 = new("", 0, 0, "", "", "", "", 0, 0, 0, 0);
 
-                        foreach (Usuario item in new RepositorioDeAcceso().GetUsers())
+                        foreach (Usuario item in new RepositorioDeAcceso().ObtenerUsuarios())
                         {
                             if (item.NombreUsuario == jugador1)
                             {
@@ -251,8 +243,7 @@ namespace Entidades.Repositorio
             }
             return historial;
         }
-
-        public void SaveMatch(Partida match)
+        public void SalvarPartida(Partida match)
         {
             using (var conexion = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
@@ -270,9 +261,8 @@ namespace Entidades.Repositorio
                 command.ExecuteNonQuery();
             }
         }
-
         //Paises
-        public List<string> GetPaises()
+        public List<string> ObtenerPaises()
         {
             List<string> misPaises = new List<string>();
             using (var conexion = new SqlConnection(connectionString))
